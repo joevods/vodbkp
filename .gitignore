@@ -3,6 +3,7 @@ helix_auth.json
 chat_archive/
 cache/all_emotes/
 cache/vods/**/chat.json.gz
+web_test
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

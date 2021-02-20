@@ -189,8 +189,15 @@ class TwitchVod:
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
+    # for vod in reversed(list(user.get_all_vods())):
         print(f'{vod.duration:10s} {vod.id} {vod.title}')
         vod = TwitchVod(vod)
+        vod.vod_backup()
+        # vod.cache_chat()
+        # vod.create_web_data()
+
+    backup_unknown_emotes()
+
         # vod.vod_backup()
         # backup_unknown_emotes()
 
