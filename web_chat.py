@@ -132,7 +132,7 @@ def consistent_format_check(chat_msg):
         return 'msg keys'
 
     commenter_keys = set(('_id','bio','created_at','display_name','logo','name','type','updated_at'))
-    if set(chat_msg['commenter'].keys()) != commenter_keys:
+    if chat_msg['commenter'] is not None and set(chat_msg['commenter'].keys()) != commenter_keys:
         return 'commenter keys'
 
     # optionals: 'bits_spent', 'emoticons', 'user_color', 'user_badges'
@@ -172,7 +172,11 @@ def process_chat_for_web(chat_list):
             break
 
         timestamp = c['content_offset_seconds']
-        username = c['commenter']['display_name']
+        if c['commenter'] is not None:
+            username = c['commenter']['display_name']
+        else:
+            # some vods have missing users (banned site-wise???)
+            username = '--deleted--'
         usercolor = c['message'].get('user_color') or gen_color(username)
         badges = [{'id': b['_id'], 'v':b['version']} for b in c['message'].get('user_badges', [])]
 
