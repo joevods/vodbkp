@@ -1,3 +1,8 @@
+
+helix_auth.json
+chat_archive/
+cache/all_emotes/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
