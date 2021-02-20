@@ -182,9 +182,9 @@ def process_chat_for_web(chat_list):
                 e_id = f['emoticon']['emoticon_id']
                 e_name = f['text']
                 fragments.append({
-                    'emoticon':{
+                    'e':{
                         'id': e_id,
-                        'name': e_name,
+                        'n': e_name,
                     }
                 })
                 emoticons.add((e_id, e_name))
@@ -197,24 +197,23 @@ def process_chat_for_web(chat_list):
                 while len(chunks) >= 2:
                     txt, lnk, *chunks = chunks
                     if txt:
-                        fragments.append({'text': txt})
-                    fragments.append({'link': lnk})
+                        fragments.append({'t': txt})
+                    fragments.append({'l': lnk})
                     # print(f'link by {username:25} at {datetime.timedelta(seconds=int(timestamp))} {lnk}')
 
                 txt, *chunks = chunks
                 if txt:
-                    fragments.append({'text': txt})
+                    fragments.append({'t': txt})
                 assert chunks == []
 
-        # TODO slim down
         parsed_msg = {
-            'badges': badges,
-            'user': {
-                'name': username,
-                'color': usercolor,
+            'b': badges,
+            'u': { # user
+                'n': username,
+                'c': usercolor,
             },
-            'fragments': fragments,
-            'time': timestamp,
+            'f': fragments,
+            't': timestamp,
         }
         msg_list.append(parsed_msg)
 
