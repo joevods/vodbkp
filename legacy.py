@@ -45,6 +45,57 @@ LINK_CHAT_TO_VIDEO = {
         ],
     },
 
+    # Undertale 1
+    '204955793': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'z5lDuR_ocrc'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # Undertale 2
+    '204955882': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'JZWInD1jLhA'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # Undertale 3
+    '204955959': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'J8yiXL92nqw'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
+    # Resident Evil 7 Stream One
+    '186708744': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'WAZI9FHMcUw'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # Resident Evil 7 Stream Two
+    '186871988': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'ibxRqOpM_Wk'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
+    # The Stanley Parable
+    '200535282': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'i_ArI2hI_88'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
 }
 
 def get_old_stream2_list():
@@ -121,7 +172,7 @@ def load_legacy2():
     vod_info = get_old_stream2_list()
     print_old_stream2_list(vod_info)
 
-    # process_old_stream2_with_video()
+    process_old_stream2_with_video()
 
 
 ####################################################################################################

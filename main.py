@@ -123,10 +123,10 @@ class TwitchVod:
             # no upload data provided externally, ask user
             if upload_data is None:
                 print('Please upload file to youtube manually')
-                print('Title:')
-                print(self.vod_title)
-                print('Description:')
+                print('='*80)
                 print(f'Date streamed: {self.vod_created_at[:10]}')
+                print(f'Original Title: {self.vod_title}')
+                print('='*80)
 
                 open_file_explorer(self.cache_path)
 
@@ -186,20 +186,29 @@ class TwitchVod:
 
 ####################################################################################################
 
+def print_processed_vods():
+    import glob
+    vod_file_list = glob.glob('cache/vods/*/video_info.json')
+    vod_file_list.sort()
+
+    for path in vod_file_list:
+        with open(path) as f:
+            vod = json.load(f)
+            print(f'{path[11:21]} {vod["title"]}')
+
+
+
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
-    # for vod in reversed(list(user.get_all_vods())):
         print(f'{vod.duration:10s} {vod.id} {vod.title}')
         vod = TwitchVod(vod)
         vod.vod_backup()
-        # vod.cache_chat()
-        # vod.create_web_data()
 
     backup_unknown_emotes()
 
-        # vod.vod_backup()
-        # backup_unknown_emotes()
 
 if __name__ == "__main__":
-    main()
+    # main()
+    print_processed_vods()
+
