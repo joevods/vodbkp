@@ -236,7 +236,6 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
-
     # 200535433  4h36m17s 2017-11-11T23:08:18Z Nioh PC Stream One
     '200535433': {
         'player_type': 'YOUTUBE',
@@ -325,7 +324,6 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
-
     # 201141434  3h40m42s 2017-11-14T06:19:21Z Titanfall 2 Campaign Stream Part One
     '201141434': {
         'player_type': 'YOUTUBE',
@@ -339,6 +337,150 @@ LINK_CHAT_TO_VIDEO = {
             ('201141589', timedelta(hours=3, minutes=41, seconds=30)),
         ],
     },
+    # 208289146  4h5m29s  2017-12-10T05:04:30Z Darkwood Stream One
+    '208289146': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': 'b7d3a530-f612-496f-9b2e-c0dac62a8588',
+            },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208289270  4h28m30s 2017-12-10T05:05:02Z Darkwood Stream Two
+    '208289270': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': 'ab3c6a93-860a-461f-ae2f-50463b1176c9',
+            },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208289991  5h18m37s 2017-12-10T05:08:34Z Xenoblade Chronicles 2 Stream One (It Begins)
+    '208289991': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'jJxqXJnbJfQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208290083  5h19m41s 2017-12-10T05:09:04Z Xenoblade Chronicles 2 Stream Two
+    '208290083': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'qQHvYNRmFy0'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208290145  3h42m13s 2017-12-10T05:09:24Z Xenoblade Chronicles 2 Stream Three (part one)
+    '208290145': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'pw_ppkVqBfg'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208290193  1h57m9s  2017-12-10T05:09:38Z Xenoblade Chronicles 2 Stream Three (part two)
+    '208290193': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'hOvQX96hYU8'},
+        'offsets': [
+            [-999, -15],
+        ],
+    },
+    # 208290539  5h9m33s  2017-12-10T05:11:25Z Xenoblade Chronicles 2 Stream Four
+    '208290539': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'KxEAZdO39pc'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208290563  4h15m33s 2017-12-10T05:11:34Z Xenoblade Chronicles 2 Stream Five
+    '208290563': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'qGdRylQqiBQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 208291607  3h58m22s 2017-12-10T05:16:42Z Xenoblade Chronicles 2 Stream Six
+    '208291607': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'IGxEWpBs-60'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 212956145  4h4m50s  2017-12-27T14:56:10Z Xenoblade Chronicles 2 Stream Seven
+    '212956145': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '8sYEHVaf9RY'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 212956310  4h27m7s  2017-12-27T14:57:00Z Xenoblade Chronicles 2 Stream Eight
+    '212956310': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'gxujfjwR6B4'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 212956460  4h40m55s 2017-12-27T14:57:50Z Xenoblade Chronicles 2 Stream Nine
+    '212956460': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'IDxfceaRvuY'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 212956582  3h57m36s 2017-12-27T14:58:22Z Xenoblade Chronicles 2 Stream Ten
+    '212956582': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'RpHTZrmd3ZA'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 212956967  3h49m59s 2017-12-27T15:00:06Z Xenoblade Chronicles 2 Stream Eleven
+    '212956967': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'b-WzsCXjCR4'},
+        'offsets': [
+            [-999, 0],
+        ],
+        'parts': [
+            # 212957486  21m25s   2017-12-27T15:02:36Z Xenoblade Chronicles 2 Stream Eleven (Part Was Cut Off)
+            ('212957486', timedelta(hours=3, minutes=52, seconds=0)),
+        ],
+    },
+    # 212957774  2h26m35s 2017-12-27T15:03:56Z Xenoblade Chronicles 2 Stream Twelve Pt 1
+    '212957774': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'VrcYQK9dSiM'},
+        'offsets': [
+            [-999, 0],
+            [timedelta(hours=2, minutes=29, seconds=0).total_seconds(), -116],
+        ],
+        'parts': [
+            # 212957894  2h14m3s  2017-12-27T15:04:39Z Xenoblade Chronicles 2 Stream Twelve Pt 2
+            ('212957894', timedelta(hours=2, minutes=29, seconds=0)),
+        ],
+    },
+    # 212958187  6h40m44s 2017-12-27T15:06:02Z Xenoblade Chronicles 2 Stream Thirteen (FINALE)
+    '212958187': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '8LPdidQqIDQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
 }
 
 
