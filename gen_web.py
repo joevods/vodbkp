@@ -28,17 +28,34 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/257850/header.jpg',
         'vod_ids': [187498472, 187695687],
     },
-
     {
         'title': 'Resident Evil 7',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/418370/header.jpg',
         'vod_ids': [186708744, 186871988],
     },
     {
+        'title': 'Assassin\'s Creed Origins',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/582160/header.jpg',
+        'vod_ids': [200534867, 200535068],
+    },
+    {
         'title': 'The Stanley Parable',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/221910/header.jpg',
         'vod_ids': [200535282],
     },
+    {
+        'title': 'Nioh',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/485510/header.jpg',
+        'vod_ids': [200535433, 200535701, 200535800, 200535922, 201141301, 204955205, 204955356, 204955410, 204955498, 204955549, 204955646],
+    },
+    {
+        'title': 'Titanfall 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1237970/header.jpg',
+        'vod_ids': [201141434],
+    },
+
+
+
     {
         'title': 'Undertale',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/391540/header.jpg',

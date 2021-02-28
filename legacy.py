@@ -220,8 +220,125 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
+    # 200534867  49m52s   2017-11-11T23:06:01Z Assassin's Creed Origins Stream One (Part One)
+    '200534867': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'jIiuo8Vmyec'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 200535068  4h3m40s  2017-11-11T23:06:50Z Assassin's Creed Origins Stream One (Part Two)
+    '200535068': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '5vRZ1yWXkV8'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
 
+    # 200535433  4h36m17s 2017-11-11T23:08:18Z Nioh PC Stream One
+    '200535433': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'iQHsmSSG5Hg'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 200535701  5h14m19s 2017-11-11T23:09:26Z Nioh PC Stream Two
+    '200535701': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '83hRgEMel9w'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 200535800  3h59m40s 2017-11-11T23:09:55Z Nioh PC Stream Three
+    '200535800': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'W8n2JG7jzFU'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 200535922  5h0m9s   2017-11-11T23:10:25Z Nioh PC Stream Four
+    '200535922': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'cL1SmlVKup8'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 201141301  4h19m54s 2017-11-14T06:18:09Z Nioh PC Stream Five
+    '201141301': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'XeAmXe8hams'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955205  4h40m59s 2017-11-28T09:26:31Z Nioh PC Stream Six
+    '204955205': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'TwlYrvhBRzA'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955356  4h44m19s 2017-11-28T09:28:03Z Nioh PC Stream Seven
+    '204955356': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '4QE19dL3a-w'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955410  5h9m25s  2017-11-28T09:28:35Z Nioh PC Stream Eight
+    '204955410': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'Oz-VC5m6kd8'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955498  4h16m6s  2017-11-28T09:29:29Z Nioh PC Stream Nine
+    '204955498': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'LFaSYXOz57g'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955549  4h54m12s 2017-11-28T09:30:03Z Nioh PC Stream Ten
+    '204955549': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'vD4Q37ezp4c'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 204955646  4h13m48s 2017-11-28T09:30:58Z Nioh PC Stream Eleven (final)
+    '204955646': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '77yu0Jy3G5I'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
 
+    # 201141434  3h40m42s 2017-11-14T06:19:21Z Titanfall 2 Campaign Stream Part One
+    '201141434': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'mcbq1FRa2Z8'},
+        'offsets': [
+            [-999, 565],
+            [timedelta(hours=3, minutes=32, seconds=0).total_seconds(), 565+10],
+        ],
+        'parts': [
+            # 201141589  1h24m44s 2017-11-14T06:20:35Z Titanfall 2 Campaign Stream Part Two
+            ('201141589', timedelta(hours=3, minutes=41, seconds=30)),
+        ],
+    },
 }
 
 
@@ -252,7 +369,8 @@ def get_old_stream2_chat(stream_id):
         return vod['comments']
 
 def process_old_stream2_with_video():
-    for vod_id, up_data in LINK_CHAT_TO_VIDEO.items():
+    # for vod_id, up_data in LINK_CHAT_TO_VIDEO.items():
+    for vod_id, up_data in list(reversed(LINK_CHAT_TO_VIDEO.items()))[:5]:
         vod_data = get_old_stream2_data(vod_id)
         assert vod_data['id'] == vod_id
         
