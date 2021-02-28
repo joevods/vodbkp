@@ -1,7 +1,33 @@
 
 import json
 
+
 data = [
+    {
+        'title': 'Nier Automata',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/524220/header.jpg',
+        'vod_ids': ['W2sQ9T2K_jE', 'WtBXfkVPrQk', 'iSsJtK8Be5Q', 186190506, 186190862, 186191227],
+    },
+    {
+        'title': 'Mark of the Ninja',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/214560/header.jpg',
+        'vod_ids': [186191227],
+    },
+    {
+        'title': 'The Evil Within',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/268050/header.jpg',
+        'vod_ids': [186707033, 186427206, 186427462, 186427659, 186428043],
+    },
+    {
+        'title': 'The Evil Within 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/601430/header.jpg',
+        'vod_ids': [186706175, 186706335, 186706473, 186706642, 186872271, 187173913, 187498472],
+    },
+    {
+        'title': 'Hyper Light Drifter',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/257850/header.jpg',
+        'vod_ids': [187498472, 187695687],
+    },
 
     {
         'title': 'Resident Evil 7',
