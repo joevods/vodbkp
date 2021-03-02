@@ -1,0 +1,16 @@
+{
+  "player_type": "PEERTUBE",
+  "player_data": {
+    "node_name": "peertube.nodja.com",
+    "video_id": "9b9aeeb0-bee2-4ab5-9f23-e1ba38fae792"
+  },
+  "offsets": [
+    [
+      -999,
+      0
+    ]
+  ],
+  "title": "Monster Hunter World Stream Two",
+  "description": "Monster Hunter World Stream Two",
+  "channel_id": "112295341"
+}

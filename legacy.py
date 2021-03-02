@@ -343,7 +343,7 @@ LINK_CHAT_TO_VIDEO = {
         'player_data': {
             'node_name': 'peertube.nodja.com',
             'video_id': 'b7d3a530-f612-496f-9b2e-c0dac62a8588',
-            },
+        },
         'offsets': [
             [-999, 0],
         ],
@@ -480,9 +480,212 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
+    # 208290332  5h36m14s 2017-12-10T05:10:26Z Doki Doki Literature Club (Blind, Chat Minimized)
+    '208290332': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'OKahXPxTGfY'},
+        'offsets': [
+            [-999, -10],
+        ],
+    },
+    # 208291477  8h37m32s 2017-12-10T05:16:07Z Hello Neighbor, Sadness and Madness Stream
+    '208291477': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'xwe25QqVQtQ'},
+        'offsets': [
+            [-999, timedelta(minutes=25, seconds=30).total_seconds()],
+        ],
+    },
+    # 212956812  6h47m36s 2017-12-27T14:59:21Z Antichamber Blind Run, No Chat. Voted by Subs and Patrons
+    '212956812': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': '6d6c411f-85b9-47e4-b241-cf91b52e5aa9',
+        },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 220016251  3h55m32s 2018-01-19T02:18:45Z Recettear Stream 3
+    '220016251': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '_1uPLZdRi1Y'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 220016608  4h53m40s 2018-01-19T02:19:57Z Recettear Stream 5
+    '220016608': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'z0shnq5fg2s'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 220016887  5h33m16s 2018-01-19T02:20:51Z Terraria Stream 2
+    '220016887': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'PKuR9R7xPGM'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 220016966  4h25m52s 2018-01-19T02:21:06Z Terraria Stream 3
+    '220016966': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'C6aistm6Tek'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 224536282  3h57m59s 2018-02-01T07:45:50Z Terraria Stream 4
+    '224536282': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'gI_bqmu9X84'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 224536317  3h3m9s   2018-02-01T07:46:12Z Terraria Stream 5
+    '224536317': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'S_5pxDRyRPk'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 224536351  4h14m35s 2018-02-01T07:46:31Z Terraria Stream 6
+    '224536351': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'oAZ78OtOjQc'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 224536391  6h38m45s 2018-02-01T07:46:50Z Terraria Stream 7
+    '224536391': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'vlu8ec2425Y'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 229255232  4h37m29s 2018-02-15T11:54:38Z Terraria Final Stream
+    '229255232': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'FdL97qkAP9M'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 223198636  4h3m26s  2018-01-28T07:02:29Z Lisa The Painful RPG - Stream One
+    '223198636': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'zd5M_myoLsQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 223198776  4h27m4s  2018-01-28T07:03:18Z Lisa The Painful RPG - Stream Two
+    '223198776': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '2iDbSLS8Q7A'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 223198851  4h16m2s  2018-01-28T07:03:43Z Lisa The Painful RPG - Stream Three
+    '223198851': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '7xAO7FCneb4'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226452904  4h42m19s 2018-02-07T00:57:28Z Subnautica Stream One
+    '226452904': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'HJbtGKy4myg'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226453025  5h3m56s  2018-02-07T00:57:50Z Subnautica Stream Two
+    '226453025': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'ZT2B1Clw_fI'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226453175  5h10m46s 2018-02-07T00:58:18Z Subnautica Stream Three
+    '226453175': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'S9nfXCMbdXw'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226453319  2h25m20s 2018-02-07T00:58:44Z Monster Hunter World Stream One
+    '226453319': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': '002688dc-a71c-401f-bdbd-e1f5d3d14c38',
+        },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226453441  5h45m36s 2018-02-07T00:59:05Z Monster Hunter World Stream Two
+    '226453441': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': '9b9aeeb0-bee2-4ab5-9f23-e1ba38fae792',
+        },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 226453597  4h14m28s 2018-02-07T00:59:30Z Monster Hunter World Stream Three
+    '226453597': {
+        'player_type': 'PEERTUBE',
+        'player_data': {
+            'node_name': 'peertube.nodja.com',
+            'video_id': 'e3fd1a34-2478-40eb-8228-e2deaa51ef83',
+        },
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 229255412  6h31m28s 2018-02-15T11:56:04Z Papers Please Stream
+    '229255412': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'ZEYMM3vvDdY'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 229255460  4h45m41s 2018-02-15T11:56:26Z Shadow of the Colossus Remake Stream
+    '229255460': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'iIsRmJdJ3S4'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
+
+
 
 }
 
+# move chat n seconds later:  -n
+# move chat n seconds before: +n
+# chat, video n seconds later:  +n
+# chat, video n seconds before: -n
 
 def get_old_stream2_list():
     vod_file_list = glob.glob('chat_archive/old_streams2/*.vod')
@@ -512,7 +715,7 @@ def get_old_stream2_chat(stream_id):
 
 def process_old_stream2_with_video():
     # for vod_id, up_data in LINK_CHAT_TO_VIDEO.items():
-    for vod_id, up_data in list(reversed(LINK_CHAT_TO_VIDEO.items()))[:5]:
+    for vod_id, up_data in list(reversed(LINK_CHAT_TO_VIDEO.items()))[:9]:
         vod_data = get_old_stream2_data(vod_id)
         assert vod_data['id'] == vod_id
         

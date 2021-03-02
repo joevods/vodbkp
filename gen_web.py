@@ -68,15 +68,67 @@ data = [
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/6231291d604f83f0011928b2c8ba8bb8.png',
         'vod_ids': [208289991, 208290083, 208290145, 208290193, 208290563, 208291607, 212956145, 212956310, 212956460, 212956582, 212956967, 212957774, 212958187],
     },
-
-
-
-
+    {
+        'title': 'Doki Doki Literature Club',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/698780/header.jpg',
+        'vod_ids': [208290332],
+    },
+    {
+        'title': 'Hello Neighbor',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/521890/header.jpg',
+        'vod_ids': [208291477],
+    },
+    {
+        'title': 'Antichamber',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/219890/header.jpg',
+        'vod_ids': [212956812],
+    },
+    {
+        'title': 'Recettear',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/70400/header.jpg',
+        'vod_ids': ['UnT6XByIWK0', 'ap9Wbnqsoic', 220016251, 220016608],
+    },
+    {
+        'title': 'Terraria',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/105600/header.jpg',
+        'vod_ids': [220016887, 220016966, 224536282, 224536317, 224536351, 224536391, 229255232],
+    },
+    {
+        'title': 'LISA: The Painful',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/335670/header.jpg',
+        'vod_ids': [223198636, 223198776, 223198851],
+    },
+    {
+        'title': 'Subnautica',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/264710/header.jpg',
+        'vod_ids': [226452904, 226453025, 226453175, 'UgZcS4cnSQg', 'XeZkhgA5cgc', 'eDX5kuqjEl8'],
+    },
+    {
+        'title': 'Monster Hunter World',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/582010/header.jpg',
+        'vod_ids': [226453319, 226453441, 226453597],
+    },
     {
         'title': 'Celeste',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/504230/header.jpg',
         'vod_ids': [229255314, 229255369, 229255509, 229255583],
     },
+    {
+        'title': 'Papers, Please',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/239030/header.jpg',
+        'vod_ids': [229255412],
+    },
+    {
+        'title': 'Shadow of the Colossus',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d3416acbe6cd441c5fea6bf3a9816cd9.png',
+        'vod_ids': [229255460],
+    },
+
+
+
+
+
+
     # {
     #     'title': 'Beyond: Two Souls',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/960990/header.jpg',
