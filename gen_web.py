@@ -123,6 +123,16 @@ data = [
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/d3416acbe6cd441c5fea6bf3a9816cd9.png',
         'vod_ids': [229255460],
     },
+    {
+        'title': 'Persona 5',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/0ec04cb3912c4f08874dd03716f80df1.png',
+        'vod_ids': [
+            'BlntZtGNFdY', 'H3rMUO33axc', 'iaQ4vuxjRR8', 'LBYcGzqq-RQ', 'sVAgu6BiYCs', '8jMIBGQDSMk',
+            233955508, 236837895, 236838035, 236838195, 236838332, 236838396, 236838457, 236838499,
+            236838546, 246081382, 246081438, 246081478, 246081528, 246081562, 246081608, 246081662,
+            246102266, 246081740, 246081777, 246081824, 246081873, 246081915, 246081954,
+        ]
+    },
 
 
 

@@ -680,6 +680,203 @@ LINK_CHAT_TO_VIDEO = {
 
 
 
+    # 233955508  3h48m48s 2018-03-01T06:00:03Z Persona 5 Stream 7 Part One
+    '233955508': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '8FyW1Ptd0m4'},
+        'offsets': [
+            [-999, 0],
+        ],
+        'parts': [
+            # 233955554  1h37m41s 2018-03-01T06:00:20Z Persona 5 Stream 7 Part Two
+            ('233955554', timedelta(hours=3, minutes=50, seconds=23)),
+        ],
+    },
+    # 236837895  6h49m6s  2018-03-09T12:30:43Z Persona 5 Stream 8
+    '236837895': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'vIQgdV8PwEg'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838035  5h41m8s  2018-03-09T12:31:31Z Persona 5 Stream 9
+    '236838035': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'kWGd5lQIdhA'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838195  1h16m30s 2018-03-09T12:32:25Z Persona 5 Stream 10 (Part One)
+    '236838195': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'noNxI08B_gY'},
+        'offsets': [
+            [-999, 0],
+        ],
+        'parts': [
+            # 236838252  3h23m50s 2018-03-09T12:32:46Z Persona 5 Stream 10 (Part Two)
+            ('236838252', timedelta(hours=1, minutes=17, seconds=35)),
+        ],
+    },
+
+    # 236838332  4h26m8s  2018-03-09T12:33:14Z Persona 5 Stream 11
+    '236838332': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'qwIwEf4XmJ8'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838396  6h10m13s 2018-03-09T12:33:35Z Persona 5 Stream 12
+    '236838396': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'S5Kp255MuW8'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838457  5h1m24s  2018-03-09T12:33:55Z Persona 5 Stream 13
+    '236838457': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'UYpu89gFqtk'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838499  4h24m38s 2018-03-09T12:34:12Z Persona 5 Stream 14
+    '236838499': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '0C8Cgzl9oDE'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 236838546  4h14m5s  2018-03-09T12:34:32Z Persona 5 Stream 15
+    '236838546': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'b01KBkNub0M'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081382  4h13m7s  2018-04-03T06:42:29Z Persona 5 Stream 16
+    '246081382': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'ayI_oKZjfR0'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081438  5h34m24s 2018-04-03T06:42:50Z Persona 5 Stream 17
+    '246081438': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '8huxIKrFikw'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081478  4h38m17s 2018-04-03T06:43:08Z Persona 5 Stream 18
+    '246081478': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'Lsyk2MFRrwQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081528  4h16m7s  2018-04-03T06:43:25Z Persona 5 Stream 19
+    '246081528': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'gvrryWeITQ0'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081562  4h9m13s  2018-04-03T06:43:44Z Persona 5 Stream 20
+    '246081562': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'xdUfa8ZGbm0'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081608  5h11m28s 2018-04-03T06:44:04Z Persona 5 Stream 21
+    '246081608': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'FOZhuUOM64M'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081662  4h14m42s 2018-04-03T06:44:21Z Persona 5 Stream 22
+    '246081662': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'z1wtNnmKvyo'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246102266  6h23m17s 2018-04-03T09:17:55Z Persona 5 Stream 23
+    '246102266': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'FqJTBEg_4ZQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081740  5h35m5s  2018-04-03T06:44:57Z Persona 5 Stream 24
+    '246081740': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'nU3AG01dvHk'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081777  4h6m53s  2018-04-03T06:45:16Z Persona 5 Stream 25
+    '246081777': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'LjCGwo6SL0I'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081824  4h52m4s  2018-04-03T06:45:31Z Persona 5 Stream 26
+    '246081824': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'O__uX2mr1N0'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081873  4h5m13s  2018-04-03T06:45:53Z Persona 5 Stream 27
+    '246081873': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'T8VbpLrL1JM'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081915  6h15m23s 2018-04-03T06:46:10Z Persona 5 Stream 28
+    '246081915': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'CnJyNKfxyPQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 246081954  6h59m14s 2018-04-03T06:46:32Z Persona 5 Stream 29 (Finale)
+    '246081954': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'v4oNnN0cJHM'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+
+
+
+
 }
 
 # move chat n seconds later:  -n
