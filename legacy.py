@@ -873,6 +873,22 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
+    # 292283444  2h37m44s 2018-08-02T18:52:19Z Useless Test Stream. Maybe Ignore. Maybe. Wait... Useless?
+    '292283444': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'jxF_wDHJw2w'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 292283857  2h51m50s 2018-08-02T18:53:23Z Hooooouse Flippppppeeeeers! First Official™ Stream in the new hoose.
+    '292283857': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': '6436bh8zg_E'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
 
 
 
