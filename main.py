@@ -189,9 +189,14 @@ class TwitchVod:
 def stich_vods(vod_id_list):
     from datetime import timedelta
     from pprint import pprint
+
+    # concat video parts
+    # ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
+
     comments = list()
-    offset_secs = 0
-    for vod_id in vod_id_list:
+    offsets = [0, 8662.699]
+
+    for vod_id, offset in zip(vod_id_list, offsets):
         chat_path = VOD_CACHE_DIR.joinpath(vod_id, CHAT_FILE_NAME)
 
         with gzip.open(chat_path, 'rt', encoding='utf8') as f:
@@ -201,19 +206,19 @@ def stich_vods(vod_id_list):
         chat = vod_data['chat']
         print(f'{vod["duration"]:10s} {vod["id"]} {vod["title"]}')
 
-        comments = [c for c in comments if c['content_offset_seconds'] <= (chat[0]['content_offset_seconds'] + offset_secs)]
+        # shave off comments from previous part
+        ts = 'content_offset_seconds'
+        comments = [c for c in comments if c[ts] <= (chat[0][ts] + offset)]
         print(len(comments))
         for chat_line in chat:
-            chat_line['content_offset_seconds'] += offset_secs
+            chat_line['content_offset_seconds'] += offset
             comments.append(chat_line)
-        
-        m = re.match(r'(\d+)h(\d+)m(\d+)s', vod["duration"])
-        offset_secs += timedelta(hours=int(m.group(1)), minutes=int(m.group(2)), seconds=int(m.group(3))).total_seconds()
 
     for c1, c2 in zip(comments, comments[1:]):
         if c1['content_offset_seconds'] > c2['content_offset_seconds']:
             pprint(c1)
             pprint(c2)
+            raise RuntimeError()
     
     precessed_chat, emoticons = process_chat_for_web(comments)
 
@@ -241,7 +246,7 @@ def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
         print(f'{vod.duration:10s} {vod.id} {vod.title}')
-        if vod.id in ['930641620', '930887527']:
+        if vod.id in ['930887527', '934539426']:
             print('### SKIPPED ###')
             continue
         vod = TwitchVod(vod)
@@ -249,18 +254,21 @@ def main():
         # vod.vod_backup()
 
         vod.cache_chat()
-        vod.create_web_data()
-        # vod.download_video()
+        vod.download_video()
+        # vod.create_web_data()
         # vod.upload_youtube()
 
-        # break
 
     backup_unknown_emotes()
 
 
 if __name__ == "__main__":
-    main()
-    # print_processed_vods()
+    # main()
+    print_processed_vods()
+    # backup_unknown_emotes()
+
 
     # stich_vods(['930641620', '930887527'])
+    # stich_vods(['934352133', '934539426'])
+
 

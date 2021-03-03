@@ -164,6 +164,16 @@ data = [
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1170970/header.jpg',
     #     'vod_ids': [914269565, 916562698],
     # },
+    {
+        'title': 'Persona 4',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1113000/header.jpg',
+        'vod_ids': [925584510, 926801730, 928032235, 929276824, 934352133],
+    },
+    {
+        'title': 'STEINS;GATE',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/412830/header.jpg',
+        'vod_ids': [930641620,],
+    },
 
 ]
 data = data[::-1]
