@@ -171,7 +171,7 @@ def process_chat_for_web(chat_list):
             pprint(c)
             break
 
-        timestamp = c['content_offset_seconds']
+        timestamp = round(c['content_offset_seconds'], 3)
         if c['commenter'] is not None:
             username = c['commenter']['display_name']
         else:

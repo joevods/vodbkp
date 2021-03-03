@@ -7,6 +7,8 @@ from pathlib import Path
 import gzip
 import json
 import re
+from datetime import timedelta
+from pprint import pprint
 
 import twitch
 import streamlink
@@ -22,6 +24,7 @@ with open('helix_auth.json') as f:
 VOD_CACHE_DIR = Path('cache', 'vods')
 
 CHAT_FILE_NAME = 'chat.json.gz'
+STICH_CHAT_FILE_NAME = 'chat_all.json.gz'
 VIDEO_FILE_NAME = 'video.mp4'
 VIDEO_TMP_FILE_NAME = 'video.part.mp4'
 VIDEO_INFO_FILE_NAME = 'video_info.json'
@@ -185,16 +188,12 @@ class TwitchVod:
         self.create_web_data()
 
 ####################################################################################################
-
-def stich_vods(vod_id_list):
-    from datetime import timedelta
-    from pprint import pprint
+def stich_vods(vod_id_list, offsets):
+    comments = list()
+    info = None
 
     # concat video parts
     # ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.mp4
-
-    comments = list()
-    offsets = [0, 8662.699]
 
     for vod_id, offset in zip(vod_id_list, offsets):
         chat_path = VOD_CACHE_DIR.joinpath(vod_id, CHAT_FILE_NAME)
@@ -203,26 +202,34 @@ def stich_vods(vod_id_list):
             vod_data = json.load(f)
 
         vod = vod_data['vod']
+        info = info or vod
         chat = vod_data['chat']
         print(f'{vod["duration"]:10s} {vod["id"]} {vod["title"]}')
 
         # shave off comments from previous part
-        ts = 'content_offset_seconds'
-        comments = [c for c in comments if c[ts] <= (chat[0][ts] + offset)]
-        print(len(comments))
+        comments = [c for c in comments if c['content_offset_seconds'] <= offset]
+
         for chat_line in chat:
             chat_line['content_offset_seconds'] += offset
             comments.append(chat_line)
-
+    
+    # make sure comments are sequential
     for c1, c2 in zip(comments, comments[1:]):
         if c1['content_offset_seconds'] > c2['content_offset_seconds']:
             pprint(c1)
             pprint(c2)
             raise RuntimeError()
-    
-    precessed_chat, emoticons = process_chat_for_web(comments)
 
-    # save optimized chat
+    data = {
+        'vod': info,
+        'chat': comments,
+    }
+    stich_chat_path = VOD_CACHE_DIR.joinpath(vod_id_list[0], STICH_CHAT_FILE_NAME)
+    with gzip.open(stich_chat_path, 'wt', encoding='utf8') as f:
+        json.dump(data, f)
+
+    # create and save optimized chat
+    precessed_chat, emoticons = process_chat_for_web(comments)
     web_data_path = VOD_CACHE_DIR.joinpath(vod_id_list[0], CHAT_WEB_FILE_NAME)
     with open(web_data_path, 'w') as f:
         json.dump(precessed_chat, f, separators=(',', ':'))
@@ -245,30 +252,32 @@ def print_processed_vods():
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
-        print(f'{vod.duration:10s} {vod.id} {vod.title}')
         if vod.id in ['930887527', '934539426']:
-            print('### SKIPPED ###')
+            print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
+        else:
+            print(f'{vod.duration:10s} {vod.id} {vod.title}')
+
         vod = TwitchVod(vod)
 
         # vod.vod_backup()
 
         vod.cache_chat()
         vod.download_video()
-        # vod.create_web_data()
-        # vod.upload_youtube()
+        vod.create_web_data()
+        vod.upload_youtube()
 
 
     backup_unknown_emotes()
 
 
 if __name__ == "__main__":
-    # main()
-    print_processed_vods()
+    main()
+    # print_processed_vods()
     # backup_unknown_emotes()
 
 
-    # stich_vods(['930641620', '930887527'])
-    # stich_vods(['934352133', '934539426'])
+    # stich_vods(['930641620', '930887527'], [0, 10435])
+    # stich_vods(['934352133', '934539426'], [0, 8662.699])
 
 
