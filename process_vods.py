@@ -98,12 +98,6 @@ def create_web_data(vod_data):
         with open(web_data_path, 'w') as f:
             json.dump(precessed_chat, f, separators=(',', ':'))
 
-
-
-
-####################################################################################################
-
-
 def stich_vods(vod_id_list, offsets):
     comments = list()
     info = None
@@ -152,7 +146,7 @@ def stich_vods(vod_id_list, offsets):
     with open(web_data_path, 'w') as f:
         json.dump(precessed_chat, f, separators=(',', ':'))
 
-
+####################################################################################################
 
 def main():
     vod_file_list = glob.glob('cache/vods/*/')
@@ -173,21 +167,8 @@ def main():
 
     backup_unknown_emotes()
 
-def debug_chat_gz(vod_id):
-    # load vod data
-    chat_path = VOD_CACHE_DIR.joinpath(vod_id, CHAT_FILE_NAME)
-    with gzip.open(chat_path, 'rt', encoding='utf8') as f:
-        vod_data = json.load(f)
-    print('vod_data')
-    print(repr(vod_data.keys()))
-    embed()
-
-
 if __name__ == "__main__":
-    # debug_chat_gz('846432586')
-    # main()
+    main()
 
-    stich_vods(['930641620', '930887527'], [0, 10435])
-    stich_vods(['934352133', '934539426'], [0, 8662.699])
-
-
+    # stich_vods(['930641620', '930887527'], [0, 10435])
+    # stich_vods(['934352133', '934539426'], [0, 8662.699])

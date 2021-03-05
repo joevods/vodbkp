@@ -51,6 +51,11 @@ def cache_emote(data, e_id, archived_emote=False):
         with open(emote_path, 'bw') as f:
             f.write(data)
 
+def get_emote_from_cache(e_id):
+    emote_path = EMOTE_ALL_CACHE_PATH.joinpath(f'{e_id}.png')
+    with open(emote_path, 'br') as f:
+        return f.read()
+
 ####################################################################################################
 
 EMOTE_UNKNOWN  = ''
@@ -108,6 +113,29 @@ def try_get_emote_data(e_id):
         return archive_data, EMOTE_ARCHIVED
 
     return None, EMOTE_DEAD
+
+# check if emote died since we cached it
+def check_for_dead_emotes():
+    with open(EMOTE_DB_FILE_NAME, 'r') as f:
+        emotes = json.load(f)
+
+    alive_emotes = [e for e, s in emotes.items() if s == EMOTE_ALIVE]
+    print(f'Emotes to check: {len(alive_emotes)}')
+
+    for i, e_id in enumerate(alive_emotes):
+        if i % 10 == 0:
+            print(f'{i}/{len(alive_emotes)}', end='\r')
+
+        if not exist_twitch_emote(e_id):
+            # emote is dead, cache locally
+            print(f'Emote died: {e_id:20s}')
+            emotes[e_id] = EMOTE_ARCHIVED
+            emote_data = get_emote_from_cache(e_id)
+            cache_emote(emote_data, e_id, True)
+
+    # write updated emote db
+    with open(EMOTE_DB_FILE_NAME, 'w') as f:
+        json.dump(emotes, f, indent=2)
 
 ####################################################################################################
 # MISC

@@ -75,7 +75,8 @@ class TwitchVod:
                 'chat': chat,
             }
             # delete duplicate chat
-            del data['vod']['comments']
+            if 'comments' in data['vod']:
+                del data['vod']['comments']
 
             # create vod cache folder if not existing
             self.cache_path.mkdir(parents=True, exist_ok=True)
@@ -107,7 +108,9 @@ class TwitchVod:
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
-        if vod.id in ['930887527', '934539426']:
+
+        vod_is_part_path = VOD_CACHE_DIR.joinpath(vod.id, PART_FILE_NAME)
+        if vod_is_part_path.is_file():
             print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
         else:
