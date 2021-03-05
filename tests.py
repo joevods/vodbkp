@@ -15,6 +15,7 @@ from pprint import pprint
 import twitch
 import streamlink
 
+from web_chat import check_emote_that_died_recently, check_for_manually_added_emotes
 from conf import *
 
 def check_joe_dead_emotes():
@@ -61,14 +62,11 @@ def debug_chat_gz(vod_id):
     print(repr(vod_data.keys()))
     embed()
 
-def check_emote_that_died_recently():
-    from web_chat import check_for_dead_emotes
-    check_for_dead_emotes()
-
 def main():
     # check_joe_dead_emotes()
-    # check_emote_that_died_recently()
     # debug_chat_gz('846432586')
+    # check_emote_that_died_recently()
+    # check_for_manually_added_emotes()
     pass
 
 if __name__ == "__main__":

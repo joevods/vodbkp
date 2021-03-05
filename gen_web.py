@@ -171,7 +171,7 @@ data = [
     {
         'title': 'Persona 4',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1113000/header.jpg',
-        'vod_ids': [925584510, 926801730, 928032235, 929276824, 934352133, 935556703, ],
+        'vod_ids': [925584510, 926801730, 928032235, 929276824, 934352133, 935556703, 938033578],
     },
     {
         'title': 'STEINS;GATE',

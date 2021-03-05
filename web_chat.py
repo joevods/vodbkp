@@ -115,7 +115,7 @@ def try_get_emote_data(e_id):
     return None, EMOTE_DEAD
 
 # check if emote died since we cached it
-def check_for_dead_emotes():
+def check_emote_that_died_recently():
     with open(EMOTE_DB_FILE_NAME, 'r') as f:
         emotes = json.load(f)
 
@@ -136,6 +136,25 @@ def check_for_dead_emotes():
     # write updated emote db
     with open(EMOTE_DB_FILE_NAME, 'w') as f:
         json.dump(emotes, f, indent=2)
+
+def check_for_manually_added_emotes():
+    with open(EMOTE_DB_FILE_NAME, 'r') as f:
+        emotes = json.load(f)
+
+    emote_cache_path = Path('cache', 'all_emotes')
+    for emote_path in emote_cache_path.glob('*'):
+        e_id = emote_path.stem
+
+        if e_id not in emotes or emotes[e_id] == EMOTE_DEAD:
+            print(f'Found manually added emote: {e_id}')
+            emotes[e_id] = EMOTE_ARCHIVED
+            emote_data = get_emote_from_cache(e_id)
+            cache_emote(emote_data, e_id, True)
+
+    # write updated emote db
+    with open(EMOTE_DB_FILE_NAME, 'w') as f:
+        json.dump(emotes, f, indent=2)
+
 
 ####################################################################################################
 # MISC

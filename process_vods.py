@@ -163,9 +163,10 @@ def main():
         print(f'{vod_id:10s} {vod_title}')
 
         create_web_data(vod_data)
+        backup_unknown_emotes()
+        
         upload_youtube(vod_data)
 
-    backup_unknown_emotes()
 
 if __name__ == "__main__":
     main()
