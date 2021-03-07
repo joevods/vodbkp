@@ -995,6 +995,7 @@ def get_old_stream2_chat(stream_id):
 
 def process_old_stream2_with_video():
     # for vod_id, up_data in LINK_CHAT_TO_VIDEO.items():
+    # for vod_id, up_data in list(reversed(LINK_CHAT_TO_VIDEO.items())):
     for vod_id, up_data in list(reversed(LINK_CHAT_TO_VIDEO.items()))[:9]:
         vod_data = get_old_stream2_data(vod_id)
         assert vod_data['id'] == vod_id
