@@ -34,8 +34,8 @@ def get_twitch_emote(e_id):
         return r.content
     return None
 
-def exist_twitch_emote(e_id):
-    r = requests.head(f'https://static-cdn.jtvnw.net/emoticons/v2/{e_id}/default/light/1.0')
+def exist_twitch_emote(e_id, s=requests):
+    r = s.head(f'https://static-cdn.jtvnw.net/emoticons/v2/{e_id}/default/light/1.0')
     return r.status_code == 200
 
 def cache_emote(data, e_id, archived_emote=False):
@@ -122,11 +122,12 @@ def check_emote_that_died_recently():
     alive_emotes = [e for e, s in emotes.items() if s == EMOTE_ALIVE]
     print(f'Emotes to check: {len(alive_emotes)}')
 
+    s = requests.Session()
     for i, e_id in enumerate(alive_emotes):
         if i % 10 == 0:
             print(f'{i}/{len(alive_emotes)}', end='\r')
 
-        if not exist_twitch_emote(e_id):
+        if not exist_twitch_emote(e_id, s):
             # emote is dead, cache locally
             print(f'Emote died: {e_id:20s}')
             emotes[e_id] = EMOTE_ARCHIVED

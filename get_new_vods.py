@@ -12,6 +12,7 @@ import twitch
 import streamlink
 
 from conf import *
+from web_chat import backup_unknown_emotes
 
 ####################################################################################################
 FFMPEG = os.path.join('ffmpeg')
@@ -104,6 +105,9 @@ class TwitchVod:
 
         # if not done download video
         self.download_video()
+
+        # backup emotes used in vod
+        backup_unknown_emotes()
 
 def main():
     user = TwitchUser('andersonjph')
