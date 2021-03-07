@@ -676,10 +676,6 @@ LINK_CHAT_TO_VIDEO = {
             [-999, 0],
         ],
     },
-
-
-
-
     # 233955508  3h48m48s 2018-03-01T06:00:03Z Persona 5 Stream 7 Part One
     '233955508': {
         'player_type': 'YOUTUBE',
@@ -720,7 +716,6 @@ LINK_CHAT_TO_VIDEO = {
             ('236838252', timedelta(hours=1, minutes=17, seconds=35)),
         ],
     },
-
     # 236838332  4h26m8s  2018-03-09T12:33:14Z Persona 5 Stream 11
     '236838332': {
         'player_type': 'YOUTUBE',
@@ -891,6 +886,78 @@ LINK_CHAT_TO_VIDEO = {
     },
 
 
+    # 292285433  5h0m10s  2018-08-02T18:57:17Z Danganronpa Stream 1. Welcome to the Dragonronpa's Den. Weeb it or leave it.
+    '292285433': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'Ji-hu5EnGlc'},
+        'offsets': [
+            [-999, 117],
+        ],
+    },
+    # 292285611  5h1m0s   2018-08-02T18:57:45Z Danganronpa Stream 2 - Weeb it or leave it. Round 2. Trial time.
+    '292285611': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'vkMvwNkjvKQ'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 292285884  1h20m18s 2018-08-02T18:58:25Z Danganronpa Stream 3 Part 1 - Weebin' hard or hardly weebin'.
+    '292285884': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'he9oUlyEAkU'},
+        'offsets': [
+            [-999, 0],
+        ],
+        'parts': [
+            # 292286035  3h23m36s 2018-08-02T18:58:45Z Danganronpa Stream 3 Part 2 - Weebin' hard or hardly weebin'.
+            ('292286035', timedelta(hours=1, minutes=22, seconds=39)),
+        ],
+    },
+    # 292286250  6h4m46s  2018-08-02T18:59:11Z Danganronpa Stream 4. It is better to have waifu'd and weeb'd, than to have never waifu'd at all.
+    '292286250': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'KlKQkSVy_QA'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 292286443  1h54m54s 2018-08-02T18:59:38Z Danganronpa Stream 5 Part 1. Reports of my weebdom have been greatly exaggerated.
+    '292286443': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'RXLTVGNwlNw'},
+        'offsets': [
+            [-999, 0],
+        ],
+        'parts': [
+            # 292286587  3h36m3s  2018-08-02T18:59:56Z Danganronpa Stream 5 Part 2. Reports of my weebdom have been greatly exaggerated.
+            ('292286587', timedelta(hours=1, minutes=55, seconds=58)),
+        ],
+    },
+    # 292286758  6h39m19s 2018-08-02T19:00:18Z Danganronpa Stream 6. Witches and waifus and weebs, oh my!
+    '292286758': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'SNrtuAYs8FE'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 292286961  6h56m52s 2018-08-02T19:00:35Z Danganronpa Day 7. Your waifu or your laifu!
+    '292286961': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'IUH2KTOV6kE'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
+    # 292287209  7h4m13s  2018-08-02T19:01:05Z Danganronpa Stream 8. My waifu brings all the weebs to the yard. And I'm like, she's better than yours.
+    '292287209': {
+        'player_type': 'YOUTUBE',
+        'player_data': {'video_id': 'oxajxfc4GVs'},
+        'offsets': [
+            [-999, 0],
+        ],
+    },
 
 
 }

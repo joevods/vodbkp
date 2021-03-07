@@ -138,6 +138,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/613100/header.jpg',
         'vod_ids': [292283444, 292283857],
     },
+    {
+        'title': 'Danganronpa: Trigger Happy Havoc',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/413410/header.jpg',
+        'vod_ids': [292285433, 292285611, 292285884, 292286250, 292286443, 292286758, 292286961, 292287209],
+    },
 
 
 
@@ -176,7 +181,7 @@ data = [
     {
         'title': 'STEINS;GATE',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/412830/header.jpg',
-        'vod_ids': [930641620,],
+        'vod_ids': [930641620, 939427008,],
     },
 
 ]
