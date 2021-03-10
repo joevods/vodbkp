@@ -166,6 +166,8 @@ def main():
         
         upload_youtube(vod_data)
 
+        backup_unknown_emotes()
+
 
 if __name__ == "__main__":
     main()

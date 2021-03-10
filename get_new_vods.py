@@ -106,9 +106,6 @@ class TwitchVod:
         # if not done download video
         self.download_video()
 
-        # backup emotes used in vod
-        backup_unknown_emotes()
-
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
