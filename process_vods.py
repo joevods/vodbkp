@@ -152,7 +152,7 @@ def main():
     vod_file_list = glob.glob('cache/vods/*/')
     vod_file_list.sort(reverse=True)
 
-    for base_path in vod_file_list:
+    for base_path in vod_file_list[:10][::-1]:
         chat_path = Path(base_path, CHAT_FILE_NAME)
         # load vod data
         with gzip.open(chat_path, 'rt', encoding='utf8') as f:
