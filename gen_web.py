@@ -184,7 +184,7 @@ data = [
     {
         'title': 'STEINS;GATE',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/412830/header.jpg',
-        'vod_ids': [930641620, 939427008,],
+        'vod_ids': [930641620, 939427008, 948027533],
     },
 
 ]
