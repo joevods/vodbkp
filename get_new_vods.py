@@ -109,6 +109,7 @@ class TwitchVod:
 def main():
     user = TwitchUser('andersonjph')
     for vod in user.get_all_vods():
+        # if 'h' not in vod.duration: continue
 
         vod_is_part_path = VOD_CACHE_DIR.joinpath(vod.id, PART_FILE_NAME)
         if vod_is_part_path.is_file():
