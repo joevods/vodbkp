@@ -228,6 +228,12 @@ def process_chat_for_web(chat_list):
         usercolor = c['message'].get('user_color') or gen_color(username)
         badges = [{'id': b['_id'], 'v':b['version']} for b in c['message'].get('user_badges', [])]
 
+        # rarely some messages don't have fragments
+        # TODO parse anyway using emotes location
+        # if 'fragments' not in c['message']:
+        #     print(f'MESSAGE WITHOUT FRAGMENTS: {c["message"]["body"]}')
+        #     continue
+
         fragments = []
         for f in c['message']['fragments']:
             if 'emoticon' in f:
