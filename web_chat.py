@@ -230,9 +230,9 @@ def process_chat_for_web(chat_list):
 
         # rarely some messages don't have fragments
         # TODO parse anyway using emotes location
-        # if 'fragments' not in c['message']:
-        #     print(f'MESSAGE WITHOUT FRAGMENTS: {c["message"]["body"]}')
-        #     continue
+        if 'fragments' not in c['message']:
+            print(f'MESSAGE WITHOUT FRAGMENTS: {c["message"]["body"]}')
+            continue
 
         fragments = []
         for f in c['message']['fragments']:
