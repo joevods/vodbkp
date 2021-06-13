@@ -150,7 +150,7 @@ def stich_vods(vod_id_list, offsets):
 
 def main():
     vod_file_list = glob.glob('cache/vods/*/')
-    vod_file_list.sort(reverse=True)
+    vod_file_list.sort(reverse=True, key=lambda x: f'{int(x[11:-1]):020d}')
 
     for base_path in vod_file_list[:10][::-1]:
         chat_path = Path(base_path, CHAT_FILE_NAME)
