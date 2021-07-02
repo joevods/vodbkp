@@ -188,6 +188,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/412830/header.jpg',
         'vod_ids': [930641620, 939427008, 948027533, 956616702, 974030391],
     },
+    {
+        'title': 'E3 2021',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [1054075326, 1055109647, 1055346976, 1057027263, ],
+    },
 
 ]
 data = data[::-1]
