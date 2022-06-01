@@ -38,7 +38,7 @@ def ffmpeg(*args):
     return subprocess.call((FFMPEG,) + args)
 
 def open_file_explorer(path):
-    return subprocess.call(['xdg-open', path])
+    return subprocess.call(['open', path])
 
 ####################################################################################################
 
@@ -251,7 +251,8 @@ def print_processed_vods():
 
 def main():
     user = TwitchUser('andersonjph')
-    for vod in user.get_all_vods():
+    # for vod in user.get_all_vods():
+    for vod in sorted(user.get_all_vods(), key=lambda x:x.id):
         if vod.id in ['930887527', '934539426']:
             print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
