@@ -191,12 +191,17 @@ data = [
     {
         'title': 'E3 2021',
         'img_link': 'img/Special Events.jpg',
-        'vod_ids': [1054075326, 1055109647, 1055346976, 1057027263, ],
+        'vod_ids': [1054075326, 1055109647, 1055346976, 1057027263],
     },
     {
         'title': 'Q&A and Test streams',
         'img_link': 'img/Special Events.jpg',
         'vod_ids': [1453636245, 1455777735, 1456749713, 1459829401],
+    },
+    {
+        'title': 'Resident Evil Village',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1196590/header.jpg',
+        'vod_ids': [1461826645, 1462775156, 1463721001, 1466648375, 1467555718],
     },
 
 ]
