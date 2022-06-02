@@ -213,6 +213,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/530320/header.jpg',
         'vod_ids': [1480190833, 1481080107],
     },
+    {
+        'title': 'Zero Escape: 999',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/afdc9ddabc55c001bb143d1f8204a733.png',
+        'vod_ids': [1481954029, 1482935056, 1485592610, 1486455731, 1487323087, 1488196924],
+    },
 
 ]
 data = data[::-1]
