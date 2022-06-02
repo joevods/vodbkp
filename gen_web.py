@@ -203,6 +203,16 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1196590/header.jpg',
         'vod_ids': [1461826645, 1462775156, 1463721001, 1466648375, 1467555718],
     },
+    {
+        'title': 'Outer Wilds - Echoes of the Eye',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1622100/header.jpg',
+        'vod_ids': [1468505512, 1469400200, 1470305943],
+    },
+    {
+        'title': 'Wandersong',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/530320/header.jpg',
+        'vod_ids': [1480190833, 1481080107],
+    },
 
 ]
 data = data[::-1]
