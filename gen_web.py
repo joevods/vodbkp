@@ -218,6 +218,11 @@ data = [
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/afdc9ddabc55c001bb143d1f8204a733.png',
         'vod_ids': [1481954029, 1482935056, 1485592610, 1486455731, 1487323087, 1488196924],
     },
+    {
+        'title': 'Q&A',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1761390/header.jpg',
+        'vod_ids': [1315836093],
+    },
 
 ]
 data = data[::-1]
