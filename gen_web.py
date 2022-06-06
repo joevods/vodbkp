@@ -145,34 +145,34 @@ data = [
     },
 
 
+    ####################################################################################################
 
 
-
-    # {
-    #     'title': 'Beyond: Two Souls',
-    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/960990/header.jpg',
-    #     'vod_ids': [847665636, 854135005, 855367450],
-    # },
-    # {
-    #     'title': 'Detroit: Become Human',
-    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/header.jpg',
-    #     'vod_ids': [856597092, 857653675, 862308796, 863568767, 864760451],
-    # },
-    # {
-    #     'title': 'Vampire: The Masquerade - Bloodlines',
-    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2600/header.jpg',
-    #     'vod_ids': [871023059, 872238689, 873453976, 874698946, 879931052, 881166481, 890251416, 891498659],
-    # },
-    # {
-    #     'title': 'Hitman 3',
-    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/236870/header.jpg',
-    #     'vod_ids': [882415406, 888955557, 892800970, 898237665, 899516736, 900813730, 902178405],
-    # },
-    # {
-    #     'title': 'Marbles on Stream: Voting Game',
-    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1170970/header.jpg',
-    #     'vod_ids': [914269565, 916562698],
-    # },
+    {
+        'title': 'Beyond: Two Souls',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/960990/header.jpg',
+        'vod_ids': [847665636, 854135005, 855367450],
+    },
+    {
+        'title': 'Detroit: Become Human',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1222140/header.jpg',
+        'vod_ids': [856597092, 857653675, 862308796, 863568767, 864760451],
+    },
+    {
+        'title': 'Vampire: The Masquerade - Bloodlines',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2600/header.jpg',
+        'vod_ids': [871023059, 872238689, 873453976, 874698946, 879931052, 881166481, 890251416, 891498659],
+    },
+    {
+        'title': 'Hitman 3',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/236870/header.jpg',
+        'vod_ids': [882415406, 888955557, 892800970, 898237665, 899516736, 900813730, 902178405],
+    },
+    {
+        'title': 'Marbles on Stream: Voting Game',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1170970/header.jpg',
+        'vod_ids': [914269565, 916562698],
+    },
     {
         'title': 'Persona 4',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1113000/header.jpg',
