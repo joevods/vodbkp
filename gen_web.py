@@ -231,6 +231,11 @@ data = [
             1511038108, 1511981394,
         ],
     },
+    {
+        'title': 'PowerWash Simulator Q&A',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1290000/header.jpg',
+        'vod_ids': [1548283759],
+    },
 
 ]
 data = data[::-1]
