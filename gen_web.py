@@ -239,7 +239,7 @@ data = [
     {
         'title': 'Neon White',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1533420/header.jpg',
-        'vod_ids': [1549213175],
+        'vod_ids': [1549213175, 1550223847],
     },
 
 ]
