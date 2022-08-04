@@ -241,6 +241,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1533420/header.jpg',
         'vod_ids': [1549213175, 1550223847],
     },
+    {
+        'title': 'Zero Escape: Zero Time Dilemma',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/311240/header.jpg',
+        'vod_ids': [1551179985],
+    },
 
 ]
 data = data[::-1]
