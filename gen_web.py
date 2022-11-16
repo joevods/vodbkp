@@ -246,6 +246,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/311240/header.jpg',
         'vod_ids': [1551179985, 1552200911, 1553138054, 1556983497, 1557974994, 1558928571],
     },
+    {
+        'title': 'God of War Ragnarök',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/16cb80d0e0c1f391eb90a597106fcd6f.png',
+        'vod_ids': [1647984162, 1648093171, 1648871211, 1648890541, 1649689730, 1650712766, 1651738482, 1652548603, 1653445210],
+    },
 
 ]
 data = data[::-1]

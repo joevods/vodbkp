@@ -253,7 +253,7 @@ def main():
     user = TwitchUser('andersonjph')
     # for vod in user.get_all_vods():
     for vod in sorted(user.get_all_vods(), key=lambda x:x.id):
-        if vod.id in ['930887527', '934539426']:
+        if vod.id in ['930887527', '934539426', '1653443620']:
             print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
         else:
