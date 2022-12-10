@@ -254,6 +254,16 @@ data = [
             1655461991, 1656249040, 1657263624, 1658236743, 1658430353,
         ],
     },
+    {
+        'title': 'Stray',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1332010/header.jpg',
+        'vod_ids': [1673857501,],
+    },
+    {
+        'title': 'Game Awards 2022',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [1673998559,],
+    },
 
 ]
 data = data[::-1]
