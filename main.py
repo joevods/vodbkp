@@ -42,6 +42,45 @@ def open_file_explorer(path):
 
 ####################################################################################################
 
+def new_comment_generator(vod_id):
+    import requests
+
+    s = requests.Session()
+    s.headers.update({'Client-Id': 'kimne78kx3ncx6brgo4mv6wki5h1ko'})
+    
+    cursor = None
+    while True:
+        req_data = [
+            {
+                "operationName": "VideoCommentsByOffsetOrCursor",
+                "variables": {
+                    "videoID": str(vod_id),
+                },
+                "extensions": {
+                    "persistedQuery": {
+                        "version": 1,
+                        "sha256Hash": "b70a3591ff0f4e0313d126c6a1502d79a1c02baebb288227c582044aa76adf6a"
+                    }
+                }
+            }
+        ]
+        if cursor is None:
+            req_data[0]['variables']['contentOffsetSeconds'] = 0.0
+        else:
+            req_data[0]['variables']['cursor'] = cursor
+        
+        r = s.post('https://gql.twitch.tv/gql', json=req_data)
+        res_data = r.json()
+        
+        for comm_data in res_data[0]['data']['video']['comments']['edges']:
+            cursor = comm_data['cursor']
+            yield comm_data['node']
+        
+        if not res_data[0]['data']['video']['comments']['pageInfo']['hasNextPage']:
+            break
+    
+####################################################################################################
+
 class TwitchUser:
     def __init__(self, username):
         self.helix = twitch.Helix(*TWITCH_HELIX_AUTH)
@@ -61,7 +100,8 @@ class TwitchVod:
             self.vod_comments = self.vod_data['comments']
         else:
             self.vod_data = vod.data
-            self.vod_comments = vod.comments
+            self.vod_data['gql_api'] = True
+            self.vod_comments = new_comment_generator(self.vod_data['id'])
 
         self.user_id = self.vod_data['user_id']
         self.vod_id = self.vod_data['id']
@@ -166,7 +206,7 @@ class TwitchVod:
         with gzip.open(self.chat_path, 'rt', encoding='utf8') as f:
             vod_data = json.load(f)
 
-        precessed_chat, emoticons = process_chat_for_web(vod_data['chat'])
+        precessed_chat, emoticons = process_chat_for_web(vod_data)
 
         # save optimized chat
         with open(self.web_data_path, 'w') as f:

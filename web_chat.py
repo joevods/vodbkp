@@ -85,7 +85,7 @@ def backup_unknown_emotes():
     unknown_emotes = [e for e, s in emotes.items() if s == EMOTE_UNKNOWN]
     for e_id in unknown_emotes:
         emote_data, emote_status = try_get_emote_data(e_id)
-        print(f'Emote {e_id:20s}: {emote_status}')
+        print(f'Emote {e_id:45s}: {emote_status}')
         emotes[e_id] = emote_status
 
         # cache emote
@@ -170,6 +170,10 @@ def gen_color(username):
 
     return f'#{rnd.randrange(256):02X}{rnd.randrange(256):02X}{rnd.randrange(256):02X}'
 
+def parse_iso_timestamp_str(s):
+    import dateutil.parser
+    return dateutil.parser.isoparse(s)
+
 ####################################################################################################
 # PROCESS CHAT
 ####################################################################################################
@@ -208,7 +212,67 @@ def consistent_format_check(chat_msg):
 # TODO shitty link regex
 LINK_RE = re.compile(r'((?:(?:[A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www\.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)(?:(?:\/[\+~%\/.\w_-]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)')
 
-def process_chat_for_web(chat_list):
+def process_chat_for_web_gql(chat_list):
+    emoticons = set()
+    msg_list = list()
+    
+    base_seconds = chat_list[0]['contentOffsetSeconds']
+    base_datetime = parse_iso_timestamp_str(chat_list[0]['createdAt']) - datetime.timedelta(seconds=base_seconds)
+
+    for c in chat_list:
+        # TODO check consistence of chat msg
+        
+        timestamp = (parse_iso_timestamp_str(c['createdAt']) - base_datetime).total_seconds()
+        timestamp = round(timestamp, 3)
+        
+        username = c['commenter']['displayName']
+        usercolor = c['message']['userColor'] or gen_color(username)
+        
+        badges = [{'id': b['setID'], 'v':b['version']} for b in c['message']['userBadges']]
+        
+        fragments = []
+        for f in c['message']['fragments']:
+            if f['emote'] is not None:
+                e_id = f['emote']['emoteID']
+                e_name = f['text']
+                fragments.append({
+                    'e':{
+                        'id': e_id,
+                        'n': e_name,
+                    }
+                })
+                emoticons.add((e_id, e_name))
+            else:
+                # text or link fragment
+                chunks = LINK_RE.split(f['text'])
+
+                assert len(chunks) % 2 == 1, f'chunks not odd {chunks}'
+                while len(chunks) >= 2:
+                    txt, lnk, *chunks = chunks
+                    if txt:
+                        fragments.append({'t': txt})
+                    fragments.append({'l': lnk})
+                    # print(f'link by {username:25} at {datetime.timedelta(seconds=int(timestamp))} {lnk}')
+
+                txt, *chunks = chunks
+                if txt:
+                    fragments.append({'t': txt})
+                assert chunks == []
+        
+        parsed_msg = {
+            'b': badges,
+            'u': { # user
+                'n': username,
+                'c': usercolor,
+            },
+            'f': fragments,
+            't': timestamp,
+        }
+        msg_list.append(parsed_msg)
+
+    return msg_list, emoticons
+
+def process_chat_for_web_oldv5(chat_list):
     emoticons = set()
     msg_list = list()
 
@@ -276,5 +340,15 @@ def process_chat_for_web(chat_list):
         msg_list.append(parsed_msg)
 
     return msg_list, emoticons
+
+def process_chat_for_web(vod_data):
+
+    if 'gql_api' in vod_data['vod']:
+        # new gql api vod data
+        return process_chat_for_web_gql(vod_data['chat'])
+    else:
+        # old api vod data
+        return process_chat_for_web_oldv5(vod_data['chat'])
+
 
 ####################################################################################################
