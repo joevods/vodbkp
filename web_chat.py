@@ -225,7 +225,12 @@ def process_chat_for_web_gql(chat_list):
         timestamp = (parse_iso_timestamp_str(c['createdAt']) - base_datetime).total_seconds()
         timestamp = round(timestamp, 3)
         
-        username = c['commenter']['displayName']
+        if c['commenter'] is not None:
+            username = c['commenter']['displayName']
+        else:
+            username = '--deleted--'
+            print(f'DELETED USER {c}')
+            
         usercolor = c['message']['userColor'] or gen_color(username)
         
         badges = [{'id': b['setID'], 'v':b['version']} for b in c['message']['userBadges']]
