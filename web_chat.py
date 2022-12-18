@@ -229,7 +229,9 @@ def process_chat_for_web_gql(chat_list):
             username = c['commenter']['displayName']
         else:
             username = '--deleted--'
-            print(f'DELETED USER {c}')
+            banned_comment = ''.join(f['text'] for f in c['message']['fragments'])
+            print(f'DELETED USER: {banned_comment}')
+            continue
             
         usercolor = c['message']['userColor'] or gen_color(username)
         
