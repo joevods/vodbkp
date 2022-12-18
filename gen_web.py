@@ -267,7 +267,7 @@ data = [
     {
         'title': 'Life is Strange',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/319630/header.jpg',
-        'vod_ids': [1679850923, 1680735935,],
+        'vod_ids': [1679850923, 1680735935, 1681648490,],
     },
 
 ]
