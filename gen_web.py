@@ -272,7 +272,7 @@ data = [
     {
         'title': 'Life is Strange: Before the Storm',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/554620/header.jpg',
-        'vod_ids': [1686034811, 1686932888,],
+        'vod_ids': [1686034811, 1686932888, 1687819144],
     },
 
 ]
