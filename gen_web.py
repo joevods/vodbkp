@@ -274,6 +274,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/554620/header.jpg',
         'vod_ids': [1686034811, 1686932888, 1687819144],
     },
+    {
+        'title': 'Life is Strange 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/532210/header.jpg',
+        'vod_ids': [1690186155, 1691111323,],
+    },
 
 ]
 data = data[::-1]
