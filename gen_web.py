@@ -279,6 +279,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/532210/header.jpg',
         'vod_ids': [1690186155, 1691111323, 1692085229, 1693955590],
     },
+    {
+        'title': 'Life is Strange: True Colors',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/936790/header.jpg',
+        'vod_ids': [1695654480, 1696567157, 1697511226],
+    },
 
 ]
 data = data[::-1]
