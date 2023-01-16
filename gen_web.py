@@ -284,6 +284,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/936790/header.jpg',
         'vod_ids': [1695654480, 1696567157, 1697511226],
     },
+    {
+        'title': 'AI: The Somnium Files',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/948740/header.jpg',
+        'vod_ids': [1703356223, 1704286699, 1705246580, 1706215362,],
+    },
 
 ]
 data = data[::-1]
