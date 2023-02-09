@@ -297,7 +297,12 @@ data = [
     {
         'title': 'Hypnospace Outlaw',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/844590/header.jpg',
-        'vod_ids': [1724103409, 1725085195],
+        'vod_ids': [1724103409, 1725085195, 1726085710, 1727051976],
+    },
+    {
+        'title': 'Half-Life',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/70/header.jpg',
+        'vod_ids': [1731074034, 1732156243],
     },
 
 ]
