@@ -302,23 +302,38 @@ data = [
     {
         'title': 'Half-Life',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/70/header.jpg',
-        'vod_ids': [1731074034, 1732156243],
+        'vod_ids': [1731074034, 1732156243, 1733134703],
+    },
+    {
+        'title': 'Half-Life: Opposing Force',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/50/header.jpg',
+        'vod_ids': [(1733134703, '2h16m39s')],
     },
 
 ]
 data = data[::-1]
 
+import re
+import datetime
+
 for game in data:
     vids = list()
     for vid in game['vod_ids']:
-        if type(vid) == int:
-            vids.append({'type':'local', 'id': str(vid)})
-        elif type(vid) == str:
-            vids.append({'type':'yt', 'id': f'https://www.youtube.com/watch?v={vid}'})
-        else:
-            raise RuntimeError('wtf')
-        # TODO peertube
-    
+        match vid:
+            case (vid, timestamp):
+                m = re.match(r'(\d+)h(\d+)m(\d+)s', timestamp)
+                time_parts = tuple(int(g) for g in m.groups())
+                t = datetime.timedelta(hours=time_parts[0], minutes=time_parts[1], seconds=time_parts[2]).seconds
+                vids.append({'type':'local', 'id': str(vid), 't': t})
+
+            case int():
+                vids.append({'type':'local', 'id': str(vid)})
+            case str():
+                vids.append({'type':'yt', 'id': f'https://www.youtube.com/watch?v={vid}'})
+            case _:
+                raise RuntimeError('wtf')
+            # TODO peertube
+
     game['vod_ids'] = vids
 
 
