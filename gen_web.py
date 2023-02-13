@@ -307,7 +307,12 @@ data = [
     {
         'title': 'Half-Life: Opposing Force',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/50/header.jpg',
-        'vod_ids': [(1733134703, '2h16m39s')],
+        'vod_ids': [(1733134703, '2h16m39s'), 1734106990],
+    },
+    {
+        'title': 'Half-Life: Blue Shift',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/130/header.jpg',
+        'vod_ids': [(1734106990, '3h04m54s')],
     },
 
 ]
