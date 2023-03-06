@@ -10,15 +10,37 @@ def print_chat(chat_path):
         data = json.load(f)
     
     for msg in data['chat']:
-        name = msg['commenter']['name']
-        message = msg['message']['body']
-        time = timedelta(seconds=int(msg['content_offset_seconds']))
-        print(f'{str(time):7s} {name:25s}: {message}')
+        try:
+            if msg['commenter'] is None:
+                name = '---UNDEFINED---'
+                message = ''.join(f['text'] for f in msg['message']['fragments'])
+                time = timedelta(seconds=int(msg['contentOffsetSeconds']))
+                # print(f'{str(time):7s} {name:25s}: {message}')
+
+            elif 'display_name' in msg['commenter']:
+                # old v5 api format
+                name = msg['commenter']['display_name']
+                message = msg['message']['body']
+                time = timedelta(seconds=int(msg['content_offset_seconds']))
+                print(f'{str(time):7s} {name:25s}: {message}')
+            elif 'displayName' in msg['commenter']:
+                # new graphql format
+                name = msg['commenter']['displayName']
+                message = ''.join(f['text'] for f in msg['message']['fragments'])
+                time = timedelta(seconds=int(msg['contentOffsetSeconds']))
+                print(f'{str(time):7s} {name:25s}: {message}')
+            else:
+                raise RuntimeError()
+        except Exception as e:
+            print(msg)
+            raise e
+
     # embed()
 
 def main():
     import sys
-    path = sys.argv[1]
+    numvod = sys.argv[1]
+    path = f'cache/vods/{numvod}/chat.json.gz'
     print_chat(path)
 
 main()
