@@ -39,7 +39,14 @@ def print_chat(chat_path):
 
 def main():
     import sys
-    numvod = sys.argv[1]
+    numvod = int(sys.argv[1])
+    
+    if numvod in range(-10000, 10000):
+        # interpret low numbers as indexes on the ordered list of vods
+        from glob import glob
+        ordered_vod_nums = sorted(int(x[11:-13]) for x in glob('cache/vods/*/chat.json.gz'))
+        numvod = ordered_vod_nums[numvod]
+    
     path = f'cache/vods/{numvod}/chat.json.gz'
     print_chat(path)
 
