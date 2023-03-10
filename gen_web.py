@@ -344,6 +344,11 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1680880/header.jpg',
         'vod_ids': [1754543841],
     },
+    {
+        'title': 'Deadly Premonition: The Director\'s Cut',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/247660/header.jpg',
+        'vod_ids': [1758343522, 1760158440, ],
+    },
 
 ]
 data = data[::-1]
