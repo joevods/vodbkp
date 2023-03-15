@@ -342,12 +342,12 @@ data = [
     {
         'title': 'Forspoken',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1680880/header.jpg',
-        'vod_ids': [1754543841],
+        'vod_ids': [1754543841, 1762161147],
     },
     {
         'title': 'Deadly Premonition: The Director\'s Cut',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/247660/header.jpg',
-        'vod_ids': [1758343522, 1760158440, ],
+        'vod_ids': [1758343522, 1760158440, 1761173567, 1764997332, 1765044056],
     },
 
 ]
