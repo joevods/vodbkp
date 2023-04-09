@@ -342,12 +342,37 @@ data = [
     {
         'title': 'Forspoken',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1680880/header.jpg',
-        'vod_ids': [1754543841, 1762161147],
+        'vod_ids': [1754543841, 1762161147, 1768791485, 1775376476, 1775456583],
     },
     {
         'title': 'Deadly Premonition: The Director\'s Cut',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/247660/header.jpg',
-        'vod_ids': [1758343522, 1760158440, 1761173567, 1764997332, 1765044056],
+        'vod_ids': [1758343522, 1760158440, 1761173567, 1764997332, 1765044056, 1766844106],
+    },
+    {
+        'title': 'Pizza Tower',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2231450/header.jpg',
+        'vod_ids': [1767777362],
+    },
+    {
+        'title': 'Gravity Rush',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/a61a12d1bc9c26992eb5c7d7929c9b5f.jpg',
+        'vod_ids': [1771565090, 1772472445, 1774307569],
+    },
+    {
+        'title': '100K follower special',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [1773361778],
+    },
+    {
+        'title': '13 Sentinels: Aegis Rim',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/dded2ec516198fbc6f630933f463ba19.jpg',
+        'vod_ids': [1778132534, 1779061487, 1779949016, 1780841897, 1784540372, 1785438441, 1786330368, 1787259036],
+    },
+    {
+        'title': 'Atomic Heart',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/668580/header.jpg',
+        'vod_ids': [1788236114,],
     },
 
 ]
