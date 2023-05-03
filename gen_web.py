@@ -367,12 +367,22 @@ data = [
     {
         'title': '13 Sentinels: Aegis Rim',
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/dded2ec516198fbc6f630933f463ba19.jpg',
-        'vod_ids': [1778132534, 1779061487, 1779949016, 1780841897, 1784540372, 1785438441, 1786330368, 1787259036],
+        'vod_ids': [1778132534, 1779061487, 1779949016, 1780841897, 1784540372, 1785438441, 1786330368, 1787259036, 1790851211, 1791736898],
     },
     {
         'title': 'Atomic Heart',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/668580/header.jpg',
         'vod_ids': [1788236114,],
+    },
+    {
+        'title': 'Resident Evil 4',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg',
+        'vod_ids': [1803276404, 1804149509, 1805018538],
+    },
+    {
+        'title': 'STAR WARS Jedi: Survivor',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1774580/header.jpg',
+        'vod_ids': [1805878705, 1806829545, 1806859534, 1809570595],
     },
 
 ]
