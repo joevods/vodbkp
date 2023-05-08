@@ -46,7 +46,9 @@ def new_comment_generator(vod_id):
     import requests
 
     s = requests.Session()
-    s.headers.update({'Client-Id': 'kimne78kx3ncx6brgo4mv6wki5h1ko'})
+    s.headers.update({
+        'Client-Id': 'kd1unb4b3q4t58fwlpcbzcbnm76a8fp',
+    })
     
     cursor = None
     while True:
