@@ -382,7 +382,7 @@ data = [
     {
         'title': 'STAR WARS Jedi: Survivor',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1774580/header.jpg',
-        'vod_ids': [1805878705, 1806829545, 1806859534, 1809570595],
+        'vod_ids': [1805878705, 1806829545, 1806859534, 1809570595, 1810442951, 1811243941, 1812101592],
     },
 
 ]
