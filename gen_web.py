@@ -248,7 +248,7 @@ data = [
     },
     {
         'title': 'God of War Ragnarök',
-        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/16cb80d0e0c1f391eb90a597106fcd6f.png',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/16cb80d0e0c1f391eb90a597106fcd6f.png',
         'vod_ids': [
             1647984162, 1648093171, 1648871211, 1648890541, 1649689730, 1650712766, 1651738482, 1652548603, 1653445210, 1655309441,
             1655461991, 1656249040, 1657263624, 1658236743, 1658430353,
@@ -382,8 +382,60 @@ data = [
     {
         'title': 'STAR WARS Jedi: Survivor',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1774580/header.jpg',
-        'vod_ids': [1805878705, 1806829545, 1806859534, 1809570595, 1810442951, 1811243941, 1812101592],
+        'vod_ids': [
+            1805878705, 1806829545, 1806859534, 1809570595, 1810442951, 1811243941, 1812101592, 1815531578, 1816382128, 1817218001,
+            1818064728, 1821441402, 1822279782,
+        ],
     },
+    {
+        'title': 'The Legend of Zelda: Tears of the Kingdom',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/3a86e24c677ab94e012855ee068b24da.png',
+        'vod_ids': [
+            1819509441, 1820380494,
+        ],
+    },
+    {
+        'title': 'Hi-Fi RUSH',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1817230/header.jpg',
+        'vod_ids': [
+            1833273341, 1834122610, 1834934737,
+        ],
+    },
+    {
+        'title': 'The Lord of the Rings: Gollum',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1265780/header.jpg',
+        'vod_ids': [
+            1835875243, 1840192721, 1841955066,
+        ],
+    },
+    {
+        'title': 'Gravity Rush 2',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/40c224d103653498c3d562aceca418e9.png',
+        'vod_ids': [
+            1839329365,
+        ],
+    },
+    {
+        'title': 'Summer Gaming Conferences 2023',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            1841094016, 1843685896,
+        ],
+    },
+    {
+        'title': 'Amnesia: The Bunker',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1944430/header.jpg',
+        'vod_ids': [
+            1845834773,
+        ],
+    },
+    # {
+    #     'title': '',
+    #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
+    #     'vod_ids': [
+            
+    #     ],
+    # },
 
 ]
 data = data[::-1]
