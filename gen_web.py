@@ -412,7 +412,7 @@ data = [
         'title': 'Gravity Rush 2',
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/40c224d103653498c3d562aceca418e9.png',
         'vod_ids': [
-            1839329365,
+            1839329365, 1846961744, 1847823038,
         ],
     },
     {
@@ -426,7 +426,7 @@ data = [
         'title': 'Amnesia: The Bunker',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1944430/header.jpg',
         'vod_ids': [
-            1845834773,
+            1845834773, 1846688002,
         ],
     },
     # {
