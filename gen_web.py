@@ -389,7 +389,7 @@ data = [
     },
     {
         'title': 'The Legend of Zelda: Tears of the Kingdom',
-        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/3a86e24c677ab94e012855ee068b24da.png',
+        'img_link': 'img/3a86e24c677ab94e012855ee068b24da.png',
         'vod_ids': [
             1819509441, 1820380494,
         ],
@@ -412,7 +412,7 @@ data = [
         'title': 'Gravity Rush 2',
         'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/40c224d103653498c3d562aceca418e9.png',
         'vod_ids': [
-            1839329365, 1846961744, 1847823038,
+            1839329365, 1846961744, 1847823038, 1851162767
         ],
     },
     {
@@ -427,6 +427,71 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1944430/header.jpg',
         'vod_ids': [
             1845834773, 1846688002,
+        ],
+    },
+    {
+        'title': 'Darkest Dungeon II',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1940340/header.jpg',
+        'vod_ids': [
+            1852041371,
+        ],
+    },
+    {
+        'title': 'Final Fantasy XVI',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/69744f719acb4dc62d5d5c24fed3c78c.png',
+        'vod_ids': [
+            1852908095, 1853802648, 1857234985, 1857287884, 1858088894, 1858945547, 1859813043, 1860055357, 1863644169, 1864472456,
+            1865358501, 1866225550, 1867066885,
+        ],
+    },
+    {
+        'title': 'Diablo IV',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/2c95cde3a47db0f2be30660b6b8a9c94.jpg',
+        'vod_ids': [
+            1868918065,
+        ],
+    },
+    {
+        'title': 'Ghost Trick: Phantom Detective',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1967430/header.jpg',
+        'vod_ids': [
+            1870054397, 1870905300, 1871835066, 1872701838
+        ],
+    },
+    {
+        'title': 'Rabi-Ribi',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/400910/header.jpg',
+        'vod_ids': [
+            1875239496, 1876129445, 1877056383, 1881358560, 1882235258
+        ],
+    },
+    {
+        'title': 'Dujanah',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/681240/header.jpg',
+        'vod_ids': [
+            1883134419
+        ],
+    },
+    {
+        'title': 'Twelve Minutes',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1097200/header.jpg',
+        'vod_ids': [
+            1884009276
+        ],
+    },
+    {
+        'title': 'AI: THE SOMNIUM FILES - nirvanA Initiative',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1449200/header.jpg',
+        'vod_ids': [
+            1887484889, 1888286523, 1889156034, 1890058779, 1890932915, 1893420212, 1894309461, 1895193903, 1896052303, 1896962336,
+            1897787278,
+        ],
+    },
+    {
+        'title': 'Inscryption',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1092790/header.jpg',
+        'vod_ids': [
+            1905627269, 1906492198, 1907349885
         ],
     },
     # {
