@@ -10,8 +10,8 @@ import re
 from datetime import timedelta
 from pprint import pprint
 
+import requests
 import twitch
-import streamlink
 
 from web_chat import process_chat_for_web, emotes_db_insert_new, backup_unknown_emotes
 
@@ -34,6 +34,9 @@ CHAT_WEB_FILE_NAME = 'chat_web.json'
 
 FFMPEG = os.path.join('ffmpeg')
 
+def youtube_dl(*args):
+    return subprocess.call(('youtube-dl',) + args)
+
 def ffmpeg(*args):
     return subprocess.call((FFMPEG,) + args)
 
@@ -43,8 +46,6 @@ def open_file_explorer(path):
 ####################################################################################################
 
 def new_comment_generator(vod_id):
-    import requests
-
     s = requests.Session()
     s.headers.update({
         'Client-Id': 'kd1unb4b3q4t58fwlpcbzcbnm76a8fp',
@@ -153,9 +154,8 @@ class TwitchVod:
 
         # skip if video already uploaded
         if not self.video_info_path.is_file() and not self.video_path.is_file():
-            print(f'    Downloading video...')
-            stream_url = streamlink.streams(self.vod_url)['best'].url
-            res = ffmpeg('-v', 'error', '-i', stream_url, '-c', 'copy', str(self.video_tmp_path))
+            print(f'    Downloading video...{self.vod_url}')
+            res = youtube_dl('-o', str(self.video_tmp_path), str(self.vod_url))
             assert res == 0, f'Error downloading {self.vod_id}'
 
             # rename video file
@@ -295,7 +295,7 @@ def main():
     user = TwitchUser('andersonjph')
     # for vod in user.get_all_vods():
     for vod in sorted(user.get_all_vods(), key=lambda x:x.id):
-        if vod.id in ['930887527', '934539426', '1653443620']:
+        if vod.id in ['1653443620', '1877892163', '1918636039']:
             print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
         else:

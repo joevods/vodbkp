@@ -491,7 +491,29 @@ data = [
         'title': 'Inscryption',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1092790/header.jpg',
         'vod_ids': [
-            1905627269, 1906492198, 1907349885
+            1905627269, 1906492198, 1907349885, 1908153041
+        ],
+    },
+    {
+        'title': 'Armored Core VI Fires Of Rubicon',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1888160/header.jpg',
+        'vod_ids': [
+            1908286988, 1909195064, 1911733493, 1912650313, 1912685408
+        ],
+    },
+    {
+        'title': 'Starfield',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1716740/header.jpg',
+        'vod_ids': [
+            1914283594, 1916249356, 1917013216, 1917875705, 1918666619, 1919498650, 1920358438, 1921221758, 1923723346, 1924510689,
+            1925356265
+        ],
+    },
+    {
+        'title': 'Lies of P',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1627720/header.jpg',
+        'vod_ids': [
+            1929673569, 1930558585, 1931371937, 1932267758, 1933229708, 1934187838, 1934972121, 1935764322
         ],
     },
     # {
