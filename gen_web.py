@@ -516,6 +516,27 @@ data = [
             1929673569, 1930558585, 1931371937, 1932267758, 1933229708, 1934187838, 1934972121, 1935764322
         ],
     },
+    {
+        'title': 'Super Mario Wonder',
+        'img_link': 'img/smw.png',
+        'vod_ids': [
+            1957672670,
+        ],
+    },
+    {
+        'title': 'Alan Wake + DLC + Control AWE',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/108710/header.jpg',
+        'vod_ids': [
+            1958415752, 1959217074, 1960034859, 1960856449,
+        ],
+    },
+    {
+        'title': 'Alan Wake 2',
+        'img_link': 'https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/b803d6d724c2136e8b36139dc81a40a3.png',
+        'vod_ids': [
+            1961674070
+        ],
+    },
     # {
     #     'title': '',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
