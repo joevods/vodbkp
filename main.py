@@ -35,7 +35,7 @@ CHAT_WEB_FILE_NAME = 'chat_web.json'
 FFMPEG = os.path.join('ffmpeg')
 
 def youtube_dl(*args):
-    return subprocess.call(('youtube-dl',) + args)
+    return subprocess.call(('yt-dlp',) + args)
 
 def ffmpeg(*args):
     return subprocess.call((FFMPEG,) + args)
