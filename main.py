@@ -22,6 +22,7 @@ with open('helix_auth.json') as f:
     TWITCH_HELIX_AUTH = json.load(f)
 
 VOD_CACHE_DIR = Path('cache', 'vods')
+TMP_DOWNLOAD_DIR = Path('/Volumes/Disk32/live_vod/')
 
 CHAT_FILE_NAME = 'chat.json.gz'
 STICH_CHAT_FILE_NAME = 'chat_all.json.gz'
@@ -115,10 +116,12 @@ class TwitchVod:
 
         self.cache_path = VOD_CACHE_DIR.joinpath(self.vod_id)
         self.chat_path = self.cache_path.joinpath(CHAT_FILE_NAME)
-        self.video_path = self.cache_path.joinpath(VIDEO_FILE_NAME)
-        self.video_tmp_path = self.cache_path.joinpath(VIDEO_TMP_FILE_NAME)
         self.video_info_path = self.cache_path.joinpath(VIDEO_INFO_FILE_NAME)
         self.web_data_path = self.cache_path.joinpath(CHAT_WEB_FILE_NAME)
+
+        self.tmp_path = TMP_DOWNLOAD_DIR
+        self.video_path = self.tmp_path.joinpath(f'{self.vod_id}.mp4')
+        self.video_tmp_path = self.tmp_path.joinpath(f'{self.vod_id}.part.mp4')
 
         self.upload_data = None
 
@@ -141,9 +144,6 @@ class TwitchVod:
                 'vod': self.vod_data,
                 'chat': chat,
             }
-
-            # create vod cache folder if not existing
-            self.cache_path.mkdir(parents=True, exist_ok=True)
 
             with gzip.open(self.chat_path, 'wt', encoding='utf8') as f:
                 json.dump(data, f)
@@ -173,7 +173,7 @@ class TwitchVod:
                 print(f'Original Title: {self.vod_title}')
                 print('='*80)
 
-                open_file_explorer(self.cache_path)
+                open_file_explorer(self.tmp_path)
 
                 video_link = input('Insert video link: ')
                 video_id = video_link.strip()[-11:]
@@ -217,17 +217,17 @@ class TwitchVod:
         emotes_db_insert_new(emoticons)
 
     def vod_backup(self):
-        # if not present download chat
+        
+        # create vod cache and download folder if not existing
+        self.cache_path.mkdir(parents=True, exist_ok=True)
+        self.tmp_path.mkdir(parents=True, exist_ok=True)
+
+        self.download_video()
         self.cache_chat()
 
-        # if not done download video
-        self.download_video()
-
-        # upload video
+        self.create_web_data()
         self.upload_youtube()
 
-        # create page from template
-        self.create_web_data()
 
 ####################################################################################################
 def stich_vods(vod_id_list, offsets):
@@ -289,8 +289,6 @@ def print_processed_vods():
             vod = json.load(f)
             print(f'{path[11:21]} {vod["title"]}')
 
-
-
 def main():
     user = TwitchUser('andersonjph')
     # for vod in user.get_all_vods():
@@ -303,13 +301,7 @@ def main():
 
         vod = TwitchVod(vod)
 
-        # vod.vod_backup()
-
-        vod.cache_chat()
-        vod.download_video()
-        vod.create_web_data()
-        vod.upload_youtube()
-
+        vod.vod_backup()
 
     backup_unknown_emotes()
 
