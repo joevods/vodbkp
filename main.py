@@ -51,7 +51,7 @@ def new_comment_generator(vod_id):
     s.headers.update({
         'Client-Id': 'kd1unb4b3q4t58fwlpcbzcbnm76a8fp',
     })
-    
+
     cursor = None
     while True:
         req_data = [
@@ -72,17 +72,17 @@ def new_comment_generator(vod_id):
             req_data[0]['variables']['contentOffsetSeconds'] = 0.0
         else:
             req_data[0]['variables']['cursor'] = cursor
-        
+
         r = s.post('https://gql.twitch.tv/gql', json=req_data)
         res_data = r.json()
-        
+
         for comm_data in res_data[0]['data']['video']['comments']['edges']:
             cursor = comm_data['cursor']
             yield comm_data['node']
-        
+
         if not res_data[0]['data']['video']['comments']['pageInfo']['hasNextPage']:
             break
-    
+
 ####################################################################################################
 
 class TwitchUser:
@@ -217,7 +217,7 @@ class TwitchVod:
         emotes_db_insert_new(emoticons)
 
     def vod_backup(self):
-        
+
         # create vod cache and download folder if not existing
         self.cache_path.mkdir(parents=True, exist_ok=True)
         self.tmp_path.mkdir(parents=True, exist_ok=True)
@@ -254,7 +254,7 @@ def stich_vods(vod_id_list, offsets):
         for chat_line in chat:
             chat_line['content_offset_seconds'] += offset
             comments.append(chat_line)
-    
+
     # make sure comments are sequential
     for c1, c2 in zip(comments, comments[1:]):
         if c1['content_offset_seconds'] > c2['content_offset_seconds']:
@@ -314,5 +314,3 @@ if __name__ == "__main__":
 
     # stich_vods(['930641620', '930887527'], [0, 10435])
     # stich_vods(['934352133', '934539426'], [0, 8662.699])
-
-
