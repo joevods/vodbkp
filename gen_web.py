@@ -537,6 +537,41 @@ data = [
             1961674070, 1962623297, 1964201193, 1965004435, 1965872956, 1966706692,
         ],
     },
+    {
+        'title': 'Slay the Princess',
+        'img_link': 'https://cdn.akamai.steamstatic.com/steam/apps/1989270/header.jpg',
+        'vod_ids': [
+            1969546347, 1969746385,
+        ],
+    },
+    {
+        'title': 'JADSEYA 2023 Award Nominees',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            1988746682
+        ],
+    },
+    {
+        'title': 'VA-11 HALL-A',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/447530/header.jpg',
+        'vod_ids': [
+            1989601616, 1990465388, 1991334745, 1992207436,
+        ],
+    },
+    {
+        'title': 'JADSEYA Propaganda & Game Awards 2023',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            1997957948
+        ],
+    },
+    {
+        'title': 'JADSEYA 2023',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            2017302012
+        ],
+    },
     # {
     #     'title': '',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
