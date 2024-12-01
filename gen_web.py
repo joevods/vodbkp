@@ -572,6 +572,20 @@ data = [
             2017302012
         ],
     },
+    {
+        'title': 'Umineko When They Cry',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/406550/header.jpg',
+        'vod_ids': [
+            2077161325
+        ],
+    },
+    {
+        'title': 'Shadow of the Erdtree video Q&A and commentary',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            2237962533
+        ],
+    },
     # {
     #     'title': '',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
