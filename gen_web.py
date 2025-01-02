@@ -586,14 +586,55 @@ data = [
             2237962533
         ],
     },
+    {
+        'title': 'Game Awards 2024 & Balatro',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [
+            2325223421
+        ],
+    },
+    {
+        'title': 'Balatro',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2379780/header.jpg',
+        'vod_ids': [
+            2326166483, 2329682240, 2330524316, 2331333771, 2332203317
+        ],
+    },
+    {
+        'title': 'Life is Strange: Double Exposure',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1874000/header.jpg',
+        'vod_ids': [
+            2328863720, 2329682240, 2330524316, 2331333771, 2332203317
+        ],
+    },
+    {
+        'title': 'Astro Bot',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/f393749d5f16cae0e767e42fc860f237.png',
+        'vod_ids': [
+            2334193562, 2335037686, 2336457067, 2337288843
+        ],
+    },
+    {
+        'title': 'Nine Sols',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1809540/header.jpg',
+        'vod_ids': [
+            2339051331, 2339898771, 2340755980
+        ],
+    },
+    {
+        'title': 'Persona 3 Reload',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/header.jpg',
+        'vod_ids': [
+            2341522598,
+        ],
+    },
     # {
     #     'title': '',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
     #     'vod_ids': [
-            
+
     #     ],
     # },
-
 ]
 data = data[::-1]
 

@@ -22,7 +22,7 @@ with open('helix_auth.json') as f:
     TWITCH_HELIX_AUTH = json.load(f)
 
 VOD_CACHE_DIR = Path('cache', 'vods')
-TMP_DOWNLOAD_DIR = Path('/Volumes/Disk32/live_vod/')
+TMP_DOWNLOAD_DIR = Path('remote_vod/work/')
 
 CHAT_FILE_NAME = 'chat.json.gz'
 STICH_CHAT_FILE_NAME = 'chat_all.json.gz'
@@ -121,7 +121,7 @@ class TwitchVod:
 
         self.tmp_path = TMP_DOWNLOAD_DIR
         self.video_path = self.tmp_path.joinpath(f'{self.vod_id}.mp4')
-        self.video_tmp_path = self.tmp_path.joinpath(f'{self.vod_id}.part.mp4')
+        # self.video_tmp_path = self.tmp_path.joinpath(f'{self.vod_id}.part.mp4')
 
         self.upload_data = None
 
@@ -148,18 +148,18 @@ class TwitchVod:
             with gzip.open(self.chat_path, 'wt', encoding='utf8') as f:
                 json.dump(data, f)
 
-    def download_video(self):
-        # remove old part if exists
-        self.video_tmp_path.unlink(missing_ok=True)
+    # def download_video(self):
+    #     # remove old part if exists
+    #     self.video_tmp_path.unlink(missing_ok=True)
 
-        # skip if video already uploaded
-        if not self.video_info_path.is_file() and not self.video_path.is_file():
-            print(f'    Downloading video...{self.vod_url}')
-            res = youtube_dl('-o', str(self.video_tmp_path), str(self.vod_url))
-            assert res == 0, f'Error downloading {self.vod_id}'
+    #     # skip if video already uploaded
+    #     if not self.video_info_path.is_file() and not self.video_path.is_file():
+    #         print(f'    Downloading video...{self.vod_url}')
+    #         res = youtube_dl('-o', str(self.video_tmp_path), str(self.vod_url))
+    #         assert res == 0, f'Error downloading {self.vod_id}'
 
-            # rename video file
-            self.video_tmp_path.rename(self.video_path)
+    #         # rename video file
+    #         self.video_tmp_path.rename(self.video_path)
 
     def upload_youtube(self, upload_data=None):
         if self.video_info_path.is_file():
@@ -192,7 +192,6 @@ class TwitchVod:
                     'channel_id': self.user_id,
                 }
 
-
             with open(self.video_info_path, 'w') as f:
                 json.dump(upload_data, f, indent=2)
             # delete video file after successfull upload
@@ -222,7 +221,6 @@ class TwitchVod:
         self.cache_path.mkdir(parents=True, exist_ok=True)
         self.tmp_path.mkdir(parents=True, exist_ok=True)
 
-        self.download_video()
         self.cache_chat()
 
         self.create_web_data()
