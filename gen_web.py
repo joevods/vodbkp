@@ -573,7 +573,7 @@ data = [
         ],
     },
     {
-        'title': 'Umineko When They Cry',
+        'title': 'Umineko When They Cry (Leap Year Edition)',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/406550/header.jpg',
         'vod_ids': [
             2077161325
@@ -597,7 +597,7 @@ data = [
         'title': 'Balatro',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2379780/header.jpg',
         'vod_ids': [
-            2326166483, 2329682240, 2330524316, 2331333771, 2332203317
+            2326166483, 2329682240, 2330524316, 2331333771, 2332203317, 2352078566
         ],
     },
     {
@@ -618,14 +618,22 @@ data = [
         'title': 'Nine Sols',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1809540/header.jpg',
         'vod_ids': [
-            2339051331, 2339898771, 2340755980
+            2339051331, 2339898771, 2340755980, 2346087608, 2352078566
         ],
     },
     {
         'title': 'Persona 3 Reload',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2161700/header.jpg',
         'vod_ids': [
-            2341522598,
+            2341522598, 2342366201, 2343269538, 2346898155, 2347760477, 2348652676, 2349550751, 2353219656, 2354113268, 2355005141,
+            2355861846,
+        ],
+    },
+    {
+        'title': 'Umineko When They Cry',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/406550/header.jpg',
+        'vod_ids': [
+            2350517708, 2356841248
         ],
     },
     # {
