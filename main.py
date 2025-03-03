@@ -203,17 +203,21 @@ class TwitchVod:
         self.upload_data = upload_data
 
     def create_web_data(self):
+        if self.web_data_path.is_file():
+            return
+
         # load vod data
         with gzip.open(self.chat_path, 'rt', encoding='utf8') as f:
             vod_data = json.load(f)
 
         precessed_chat, emoticons = process_chat_for_web(vod_data)
 
+        emotes_db_insert_new(emoticons)
+
         # save optimized chat
         with open(self.web_data_path, 'w') as f:
             json.dump(precessed_chat, f, separators=(',', ':'))
 
-        emotes_db_insert_new(emoticons)
 
     def vod_backup(self):
 
@@ -291,7 +295,7 @@ def main():
     user = TwitchUser('andersonjph')
     # for vod in user.get_all_vods():
     for vod in sorted(user.get_all_vods(), key=lambda x:x.id):
-        if vod.id in ['1653443620', '1877892163', '1918636039']:
+        if vod.id in ['2385565819', '1877892163', '1918636039']:
             print(f'{vod.duration:10s} {vod.id} ### SKIPPED ### {vod.title}')
             continue
         else:
