@@ -1,12 +1,22 @@
 
-from IPython import embed
 from pprint import pprint
 from pathlib import Path
 import json
 import re
-import os
 import requests
 import datetime
+import random
+from dateutil.parser import isoparse
+
+
+EMOTE_UNKNOWN  = ''
+EMOTE_ALIVE    = 'alive'
+EMOTE_ARCHIVED = 'archived'
+EMOTE_DEAD     = 'dead'
+
+EMOTE_DB_FILE_NAME = Path('cache', 'emote_db.json')
+EMOTE_CACHE_PATH = Path('cache', 'emotes')
+EMOTE_ALL_CACHE_PATH = Path('cache', 'all_emotes')
 
 ####################################################################################################
 # EMOTE
@@ -57,15 +67,6 @@ def get_emote_from_cache(e_id):
         return f.read()
 
 ####################################################################################################
-
-EMOTE_UNKNOWN  = ''
-EMOTE_ALIVE    = 'alive'
-EMOTE_ARCHIVED = 'archived'
-EMOTE_DEAD     = 'dead'
-
-EMOTE_DB_FILE_NAME = Path('emote_db.json')
-EMOTE_CACHE_PATH = Path('cache', 'emotes')
-EMOTE_ALL_CACHE_PATH = Path('cache', 'all_emotes')
 
 def emotes_db_insert_new(new_emotes):
     with open(EMOTE_DB_FILE_NAME, 'r+') as f:
@@ -164,15 +165,9 @@ def check_for_manually_added_emotes():
 def gen_color(username):
     # TODO avoid white like colors ???
     # color depends from username
-    import random
     rnd = random.Random(username)
-    colors = [rnd.randrange(256) for _ in range(3)]
 
     return f'#{rnd.randrange(256):02X}{rnd.randrange(256):02X}{rnd.randrange(256):02X}'
-
-def parse_iso_timestamp_str(s):
-    import dateutil.parser
-    return dateutil.parser.isoparse(s)
 
 ####################################################################################################
 # PROCESS CHAT
@@ -215,28 +210,28 @@ LINK_RE = re.compile(r'((?:(?:[A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za
 def process_chat_for_web_gql(chat_list):
     emoticons = set()
     msg_list = list()
-    
+
     base_seconds = chat_list[0]['contentOffsetSeconds']
-    base_datetime = parse_iso_timestamp_str(chat_list[0]['createdAt']) - datetime.timedelta(seconds=base_seconds)
+    base_datetime = isoparse(chat_list[0]['createdAt']) - datetime.timedelta(seconds=base_seconds)
 
     for c in chat_list:
         # TODO check consistence of chat msg
-        
-        timestamp = (parse_iso_timestamp_str(c['createdAt']) - base_datetime).total_seconds()
+
+        timestamp = (isoparse(c['createdAt']) - base_datetime).total_seconds()
         timestamp = round(timestamp, 3)
-        
+
         if c['commenter'] is not None:
             username = c['commenter']['displayName']
         else:
             username = '--deleted--'
             banned_comment = ''.join(f['text'] for f in c['message']['fragments'])
-            print(f'DELETED USER: {banned_comment}')
+            # print(f'DELETED USER: {banned_comment}')
             continue
-            
+
         usercolor = c['message']['userColor'] or gen_color(username)
-        
+
         badges = [{'id': b['setID'], 'v':b['version']} for b in c['message']['userBadges']]
-        
+
         fragments = []
         for f in c['message']['fragments']:
             if f['emote'] is not None:
@@ -265,7 +260,7 @@ def process_chat_for_web_gql(chat_list):
                 if txt:
                     fragments.append({'t': txt})
                 assert chunks == []
-        
+
         parsed_msg = {
             'b': badges,
             'u': { # user
@@ -349,7 +344,6 @@ def process_chat_for_web_oldv5(chat_list):
     return msg_list, emoticons
 
 def process_chat_for_web(vod_data):
-
     if 'gql_api' in vod_data['vod']:
         # new gql api vod data
         return process_chat_for_web_gql(vod_data['chat'])
