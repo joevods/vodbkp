@@ -635,7 +635,7 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/406550/header.jpg',
         'vod_ids': [
             2350517708, 2356841248, 2363320345, 2368739807, 2369654143, 2375867307, 2378463655, 2381941631, 2384687694, 2388288993,
-            2390906390, 2394428192,
+            2390906390, 2394428192, 2399573092, 2400495574,
         ],
     },
     {
@@ -643,6 +643,13 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1262350/header.jpg',
         'vod_ids': [
             2391786500, 2392577761, 2393507085
+        ],
+    },
+    {
+        'title': 'HELLDIVERS',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/553850/header.jpg',
+        'vod_ids': [
+            2399027938,
         ],
     },
     # {
