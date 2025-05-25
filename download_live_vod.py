@@ -38,7 +38,7 @@ def run_ffmpeg(*args, timeout=60, capture_output=True):
         return True
     except subprocess.TimeoutExpired as e:
         print(f"FFmpeg timed out and was killed. {command}")
-        raise e
+        return False
     except subprocess.CalledProcessError as e:
         print(f"FFmpeg failed: {e.stderr}")
         return False
@@ -140,7 +140,7 @@ class TwitchUser:
             if len(stream_vod) == 1:
                 return stream_vod[0]
             elif len(stream_vod) == 0:
-                raise RuntimeError(f'Channel {self.username} is live but no vod')
+                return None
             else:
                 raise RuntimeError(f'Channel {self.username} is live but multiple vods for same stream? {stream_vod}')
         else:
@@ -379,7 +379,7 @@ class LiveVodDownloader:
 
 def main():
     downloader = ChannelVodDownloader('andersonjph')
-    # downloader = ChannelVodDownloader('helloitsmouse')
+    #downloader = ChannelVodDownloader('helloitsmouse')
     if len(sys.argv) > 1:
         if (m := re.match(r'https://www\.twitch\.tv/videos/(\d+)', sys.argv[1])):
             vodid = int(m.group(1))

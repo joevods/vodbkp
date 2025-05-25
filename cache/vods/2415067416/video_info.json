@@ -1,0 +1,15 @@
+{
+  "player_type": "YOUTUBE",
+  "player_data": {
+    "video_id": "y-cuuOo_CEE"
+  },
+  "offsets": [
+    [
+      -999,
+      0
+    ]
+  ],
+  "title": "Test stream don't ignore.",
+  "description": "",
+  "channel_id": "112295341"
+}
