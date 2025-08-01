@@ -812,5 +812,5 @@ for game in data:
     game['vod_ids'] = vids
 
 
-with open('web_test/games_info.json', 'w') as f:
+with open('joevods.github.io/games_info.json', 'w') as f:
     json.dump(data, f)
