@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 import subprocess
 import time
+import traceback
 import requests
 import twitch
 import yt_dlp
@@ -386,6 +387,9 @@ def main():
             vod = HELIX.video(vodid)
             lvd = LiveVodDownloader(vod)
             lvd.download_live_vod()
+
+            # since i always forgot to re enable polling after a specific download i'll do it here
+            downloader.wait_for_live()
             return
 
         # download a specific vod from list or show all vods
@@ -403,4 +407,16 @@ def main():
         downloader.wait_for_live()
 
 if __name__ == "__main__":
-    main()
+
+    while True:
+        try:
+            main()
+        except KeyboardInterrupt:
+            print("\nProgram interrupted by user. Exiting cleanly.")
+            sys.exit(0)
+        except Exception:
+            print("Exception occurred, restarting...\n")
+            traceback.print_exc()
+            time.sleep(1)
+        else:
+            break  # Exit if main() completes without error
