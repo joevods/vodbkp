@@ -711,7 +711,7 @@ data = [
     },
     {
         'title': 'The Elder Scrolls IV: Oblivion Remastered',
-        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2623190/header.jpg',
+        'img_link': 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2623190/a7cee9165bb1bfc092c390c5cff215ce0e381dfc/header.jpg',
         'vod_ids': [2440595323],
     },
     {
@@ -759,7 +759,7 @@ data = [
     },
     {
         'title': 'Death Stranding 2: On the Beach',
-        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/c7fbc88d094b7221d63de2e56dd234c0.png',
         'vod_ids': [2494721106, 2495601306, 2496493434, 2497401423, 2501828683, 2502685945, 2503557968, 2504415781, 2507018225, 2507904889],
     },
     {
