@@ -706,7 +706,7 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1432500/header.jpg',
         'vod_ids': [
             2438333778, 2444457486, 2450507327, 2456430249, 2462402375, 2468396535, 2474665471, 2480883867, 2487075948, 2493285311,
-            2499484196, 2511740718, 2517976134, 2524179009, 2530380507, 2533890625,
+            2499484196, 2511740718, 2517976134, 2524179009, 2530380507, 2533890625, 2539286761, 2542883811
         ],
     },
     {
@@ -729,7 +729,8 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/639490/header.jpg',
         'vod_ids': [
             2457786819, 2461228617, 2463786627, 2467219613, 2468975307, 2469848219, 2473466546, 2476083905, 2479633486, 2485897693,
-            2492110274, 2498331318, 2510570702, 2513191175, 2516789220, 2523010327, 2525600798, 2529213182,
+            2492110274, 2498331318, 2510570702, 2513191175, 2516789220, 2523010327, 2525600798, 2529213182, 2535525195, 2540794901,
+            2541699107,
         ],
     },
     {
@@ -775,7 +776,70 @@ data = [
     {
         'title': 'Clair Obscur: Expedition 33',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1903340/header.jpg',
-        'vod_ids': [2521237069, 2522098020, 2526516877, 2527403661, 2528292374, 2531806229, 2532690790, 2533615721],
+        'vod_ids': [
+            2521237069, 2522098020, 2526516877, 2527403661, 2528292374, 2531806229, 2532690790, 2533615721, 2534565825, 2538155916,
+            2539033398, 2539908549, 2542591552, 2543502079
+        ],
+    },
+    {
+        'title': 'Pentiment',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1205520/header.jpg',
+        'vod_ids': [2550353855, 2553789321, 2565534220, 2568762329, 2575470170, 2582208188,],
+    },
+    {
+        'title': 'Donkey Kong: Bananza',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/150e0b3a45e297301f5d2eca9cbc84ed.jpg',
+        'vod_ids': [2551146593, 2551991533, 2552838388],
+    },
+    {
+        'title': 'Hollow Knight revisit',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/367520/header.jpg',
+        'vod_ids': [2556356543, 2557171836],
+    },
+    {
+        'title': 'Hollow Knight: Silksong',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1030300/header.jpg',
+        'vod_ids': [2558010121, 2558811705, 2559711334, 2560573610, 2561404015, 2562218887, 2563035178],
+    },
+    {
+        'title': 'Metal Gear 1 and 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2131680/header.jpg',
+        'vod_ids': [2567951100, 2569588112, 2570438130],
+    },
+    {
+        'title': '428: Shibuya Scramble',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/648580/header.jpg',
+        'vod_ids': [2572416757, 2578325155, 2584241993, 2590267798, 2596288963, 2602186624, ],
+    },
+    {
+        'title': 'Metal Gear Solid',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/00f42382da08bb47df2585a2590be0a7.png',
+        'vod_ids': [2573792042, 2574636697],
+    },
+    {
+        'title': 'Metal Gear Solid: The Twin Snakes',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/0ed3c99611eae3fc3c53fa0fbd130671.png',
+        'vod_ids': [2576292929],
+    },
+    {
+        'title': 'Metal Gear Solid 2: Sons of Liberty',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/620e0c40741d4c20c746eb340ba70bc5.png',
+        'vod_ids': [2579687677, 2580507169, 2581373986],
+    },
+    {
+        'title': 'Metal Gear Solid 3: Snake Eater',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2131650/header.jpg',
+        'vod_ids': [2585614135, 2586459993, 2587294457],
+    },
+    {
+        'title': 'Five Nights at Freddy\'s',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/319510/header.jpg',
+        'vod_ids': [2588164202, ],
+    },
+    {
+        'title': 'SILENT HILL f',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2947440/header.jpg',
+        'vod_ids': [2591712656, 2592550505, 2593404934, 2594265657, 2598502455, 2599375467, 2603533981],
     },
     # {
     #     'title': '',
