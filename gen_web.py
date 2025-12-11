@@ -809,7 +809,10 @@ data = [
     {
         'title': '428: Shibuya Scramble',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/648580/header.jpg',
-        'vod_ids': [2572416757, 2578325155, 2584241993, 2590267798, 2596288963, 2602186624, ],
+        'vod_ids': [
+            2572416757, 2578325155, 2584241993, 2590267798, 2596288963, 2602186624, 2608232604, 2614239979, 2620391640, 2626404976,
+            2632254101, 2638193226,
+        ],
     },
     {
         'title': 'Metal Gear Solid',
@@ -834,12 +837,62 @@ data = [
     {
         'title': 'Five Nights at Freddy\'s',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/319510/header.jpg',
-        'vod_ids': [2588164202, ],
+        'vod_ids': [2588164202, 2604482482],
     },
     {
         'title': 'SILENT HILL f',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2947440/header.jpg',
         'vod_ids': [2591712656, 2592550505, 2593404934, 2594265657, 2598502455, 2599375467, 2603533981],
+    },
+    {
+        'title': 'Hunt: Showdown 1896',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/594650/header.jpg',
+        'vod_ids': [2605276056],
+    },
+    {
+        'title': 'No, I\'m not a Human',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3180070/header.jpg',
+        'vod_ids': [2606135291],
+    },
+    {
+        'title': 'ARC Raiders',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1808500/header.jpg',
+        'vod_ids': [2607041653],
+    },
+    {
+        'title': 'Pathologic',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
+        'vod_ids': [2609651634, 2615694439, 2621800732, 2628601335, 2633574721],
+    },
+    {
+        'title': 'Metal Gear Solid 4: Guns of the Patriots',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/c8bd25e1fe90f66aa25a10562c06d459.png',
+        'vod_ids': [2610482063, 2611310571, 2612145636, 2613088750],
+    },
+    {
+        'title': 'No Sleep For Kaname Date - From AI: THE SOMNIUM FILES',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2752180/header.jpg',
+        'vod_ids': [2616598509, 2617459931, 2618307715, 2619277195, 2622643833],
+    },
+    {
+        'title': 'Hades 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1145350/header.jpg',
+        'vod_ids': [2623514355, 2624824984, 2627492389, 2629405446, 2630161361, 2638822126, 2639155194],
+    },
+    {
+        'title': 'PEAK',
+        'img_link': 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/31bac6b2eccf09b368f5e95ce510bae2baf3cfcd/header.jpg',
+        'vod_ids': [2627810823],
+    },
+    {
+        'title': 'Kingdom Come: Deliverance II',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg',
+        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492],
+    },
+    {
+        'title': 'JADSEYA 2025 Award Nominees',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2635246793],
     },
     # {
     #     'title': '',
