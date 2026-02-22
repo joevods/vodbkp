@@ -811,7 +811,7 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/648580/header.jpg',
         'vod_ids': [
             2572416757, 2578325155, 2584241993, 2590267798, 2596288963, 2602186624, 2608232604, 2614239979, 2620391640, 2626404976,
-            2632254101, 2638193226,
+            2632254101, 2638193226, 2644096974, 2649908253,
         ],
     },
     {
@@ -862,7 +862,7 @@ data = [
     {
         'title': 'Pathologic',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
-        'vod_ids': [2609651634, 2615694439, 2621800732, 2628601335, 2633574721],
+        'vod_ids': [2609651634, 2615694439, 2621800732, 2628601335, 2633574721, 2647074509, 2651318570, 2656843097, 2662810724, 2671633093],
     },
     {
         'title': 'Metal Gear Solid 4: Guns of the Patriots',
@@ -887,12 +887,62 @@ data = [
     {
         'title': 'Kingdom Come: Deliverance II',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg',
-        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492],
+        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, ],
     },
     {
         'title': 'JADSEYA 2025 Award Nominees',
         'img_link': 'img/Special Events.jpg',
         'vod_ids': [2635246793],
+    },
+    {
+        'title': 'The Game Awards 2025',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2641443495],
+    },
+    {
+        'title': 'Streams tier list 2025',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2646267642],
+    },
+    {
+        'title': 'YIIK: A Postmodern RPG v1.03',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/459080/header.jpg',
+        'vod_ids': [2647899902, 2648762383, 2652089445, 2653466603, 2657690548, 2663669073, 2675287654],
+    },
+    {
+        'title': 'Kingdom Hearts on Mouse channel',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/379fa3c8b371de63bc6811659c16c28e.png',
+        'vod_ids': [2650704130],
+    },
+    {
+        'title': 'NieR Replicant',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1113560/header.jpg',
+        'vod_ids': [2658427579, 2664533939, 2676156208, 2677030332, 2677936697, 2681736599, 2682620146, 2683509788, 2684391121],
+    },
+    {
+        'title': 'JADSEYA 2025 Award',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2659360582],
+    },
+    {
+        'title': 'Abiotic Factor',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/427410/header.jpg',
+        'vod_ids': [2670751575],
+    },
+    {
+        'title': 'YIIK: A Postmodern RPG v1.5',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/459080/header.jpg',
+        'vod_ids': [2678228318, 2684688211, 2697042311],
+    },
+    {
+        'title': 'Pathologic - Haruspex route',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
+        'vod_ids': [2685352548, 2691583869, 2697692694],
+    },
+    {
+        'title': 'Metaphor: ReFantazio',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/header.jpg',
+        'vod_ids': [2688035751, 2688904857, 2689756050, 2690637672, 2694165945, 2695875373, 2696760509, 2700332794, ],
     },
     # {
     #     'title': '',
