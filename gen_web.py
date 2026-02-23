@@ -932,17 +932,20 @@ data = [
     {
         'title': 'YIIK: A Postmodern RPG v1.5',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/459080/header.jpg',
-        'vod_ids': [2678228318, 2684688211, 2697042311],
+        'vod_ids': [2678228318, 2684688211, 2697042311, 2703235717],
     },
     {
         'title': 'Pathologic - Haruspex route',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
-        'vod_ids': [2685352548, 2691583869, 2697692694],
+        'vod_ids': [2685352548, 2691583869, 2697692694, 2703880065, ],
     },
     {
         'title': 'Metaphor: ReFantazio',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/header.jpg',
-        'vod_ids': [2688035751, 2688904857, 2689756050, 2690637672, 2694165945, 2695875373, 2696760509, 2700332794, ],
+        'vod_ids': [
+            2688035751, 2688904857, 2689756050, 2690637672, 2694165945, 2695875373, 2696760509, 2700332794, 2701211289, 2702078605,
+            2702950728,
+        ],
     },
     # {
     #     'title': '',
