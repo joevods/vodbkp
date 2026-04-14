@@ -882,7 +882,7 @@ data = [
     {
         'title': 'PEAK',
         'img_link': 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3527290/31bac6b2eccf09b368f5e95ce510bae2baf3cfcd/header.jpg',
-        'vod_ids': [2627810823],
+        'vod_ids': [2627810823, 2745553177],
     },
     {
         'title': 'Kingdom Come: Deliverance II',
@@ -932,20 +932,61 @@ data = [
     {
         'title': 'YIIK: A Postmodern RPG v1.5',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/459080/header.jpg',
-        'vod_ids': [2678228318, 2684688211, 2697042311, 2703235717],
+        'vod_ids': [2678228318, 2684688211, 2697042311, 2703235717, 2715643886, 2727501351, 2733333159],
     },
     {
         'title': 'Pathologic - Haruspex route',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
-        'vod_ids': [2685352548, 2691583869, 2697692694, 2703880065, ],
+        'vod_ids': [2685352548, 2691583869, 2697692694, 2703880065, 2710156741, 2716309386],
     },
     {
         'title': 'Metaphor: ReFantazio',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2679460/header.jpg',
         'vod_ids': [
             2688035751, 2688904857, 2689756050, 2690637672, 2694165945, 2695875373, 2696760509, 2700332794, 2701211289, 2702078605,
-            2702950728,
+            2702950728, 2706555734, 2707420245, 2708262740, 2709174476, 2712812721, 2713665920, 2714513513, 2715364448, 2718813132,
+            2719637421, 2720465019,
         ],
+    },
+    {
+        'title': 'Mewgenics',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/686060/header.jpg',
+        'vod_ids': [2711962872, 2718006157, 2723911889, 2729819338],
+    },
+    {
+        'title': 'Pathologic - Changling route',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/384110/header.jpg',
+        'vod_ids': [2722200959, 2728118842, 2733963958, 2739820001, 2744645636],
+    },
+    {
+        'title': 'Resident Evil Requiem',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3764200/header.jpg',
+        'vod_ids': [2725573235, 2726382353, 2727232449, ],
+    },
+    {
+        'title': 'Slay the Spire 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2868840/header.jpg',
+        'vod_ids': [2730726723, 2731441916, 2735641446, 2738943726],
+    },
+    {
+        'title': 'Life is Strange: Reunion',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2624870/header.jpg',
+        'vod_ids': [2732259720, 2733071388, 2736460061],
+    },
+    {
+        'title': 'Baby Steps',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1281040/header.jpg',
+        'vod_ids': [2737297503],
+    },
+    {
+        'title': 'The Case of the Golden Idol',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1677770/header.jpg',
+        'vod_ids': [2738098387, 2738943726],
+    },
+    {
+        'title': 'The Great Ace Attorney Chronicles',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1158850/header.jpg',
+        'vod_ids': [2743050152, 2743837396, 2747164505, ],
     },
     # {
     #     'title': '',
