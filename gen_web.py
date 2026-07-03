@@ -986,7 +986,78 @@ data = [
     {
         'title': 'The Great Ace Attorney Chronicles',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1158850/header.jpg',
-        'vod_ids': [2743050152, 2743837396, 2747164505, ],
+        'vod_ids': [2743050152, 2743837396, 2747164505, 2747946699, 2748731670, 2749526257, 2754380301, 2755174458, 2755950079, ],
+    },
+    {
+        'title': 'Fanart and video watchalong',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2750322668],
+    },
+    {
+        'title': 'Pathologic 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
+        'vod_ids': [2753591351, 2756799236, 2762448363, 2767980860, 2773512366, 2779031889, 2784584052, 2795777620, 2796570332],
+    },
+    {
+        'title': 'Road to Empress',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3478050/header.jpg',
+        'vod_ids': [2756971421, 2762630260, 2768141628, 2773685235],
+    },
+    {
+        'title': 'PRAGMATA',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3357650/header.jpg',
+        'vod_ids': [2759175220, 2759973791, 2760764508],
+    },
+    {
+        'title': 'Vampire Crawlers',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3265700/header.jpg',
+        'vod_ids': [2761615587],
+    },
+    {
+        'title': 'SIFU',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2138710/header.jpg',
+        'vod_ids': [2764826135, 2766361096],
+    },
+    {
+        'title': 'Neon White',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1533420/header.jpg',
+        'vod_ids': [2767162441, 2770265532, 2771034680, 2771841614, 2772657647, 2780630511, 2786162795],
+    },
+    {
+        'title': 'Stellar Blade',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3489700/header.jpg',
+        'vod_ids': [
+            2775886919, 2776631004, 2777415557, 2778203458, 2781464016, 2782180381, 2782976579, 2783753598, 2785400228, 2786918167,
+            2787335861,
+        ],
+    },
+    {
+        'title': 'The Great Ace Attorney Chronicles part 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1158850/header.jpg',
+        'vod_ids': [
+            2787715566, 2792572212, 2793369063, 2794155999, 2794942624, 2798078333, 2798892227, 2799678517, 2800472499, 2802836032,
+            2803555813, 2804336554
+        ],
+    },
+    {
+        'title': 'Summer Gaming Conferences 2026',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2789475720, ],
+    },
+    {
+        'title': 'Mina the Hollower',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1875580/header.jpg',
+        'vod_ids': [2789876340, 2791552240, 2792361630, 2794726495],
+    },
+    {
+        'title': 'The Forgotten City',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/874260/header.jpg',
+        'vod_ids': [2801282448, ],
+    },
+    {
+        'title': 'Road to Empress 2',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/4148240/header.jpg',
+        'vod_ids': [2801428760, ],
     },
     # {
     #     'title': '',
