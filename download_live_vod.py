@@ -315,40 +315,56 @@ class LiveVodDownloader:
                 raise RuntimeError(f"Warning: Gap detected between {sorted_fragments[i]} and {sorted_fragments[i + 1]}")
 
     def consolidate_vod_fragments(self):
-        # Check that all downloaded chunks have no gaps
+        # Ensure all downloaded chunks have no gaps
         self.check_consecutive_fragments()
 
         self.work_path.mkdir(parents=True, exist_ok=True)
-        temp_fmp4 = self.work_path / f'{self.vod.id}_temp.mp4'
         output_file = self.work_path / f'{self.vod.id}.mp4'
         init_file = self.chunk_path / 'init.mp4'
 
-        print("Merging fMP4 fragments via binary concatenation...")
-        with open(temp_fmp4, 'wb') as outfile:
-            # 1. Write initialization metadata layout first
-            if init_file.exists():
-                with open(init_file, 'rb') as infile:
-                    outfile.write(infile.read())
+        # Tell FFmpeg to read from standard input (pipe:0)
+        command = ['ffmpeg', '-y', '-i', 'pipe:0', '-c', 'copy', str(output_file)]
 
-            # 2. Sequentially append video segments
-            for e in tqdm(sorted(self.downloaded_fragments), leave=None, desc="Merging"):
+        print("Streaming fragments directly to FFmpeg...")
+        try:
+            # Start FFmpeg process with stdin enabled
+            process = subprocess.Popen(
+                command,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE
+            )
+
+            # 1. Feed the mandatory initialization header first
+            if init_file.exists():
+                process.stdin.write(init_file.read_bytes())
+
+            # 2. Feed each sequential video chunk
+            for e in tqdm(sorted(self.downloaded_fragments), leave=None, desc="Piping to FFmpeg"):
                 path = self.chunk_path / f'{e}.mp4'
                 if path.exists():
-                    with open(path, 'rb') as infile:
-                        outfile.write(infile.read())
+                    process.stdin.write(path.read_bytes())
 
-        print("Remuxing to standard streamable MP4 using FFmpeg...")
-        # A single FFmpeg pass structures the layout for general media player compatibility
-        success = run_ffmpeg('-y', '-i', temp_fmp4, '-c', 'copy', output_file, timeout=None, capture_output=False)
+                    # --- PRO-TIP FOR 1X DISK SPACE ---
+                    # If you want to be extremely aggressive with storage,
+                    # uncomment the next line to delete the chunk right after feeding it to FFmpeg!
+                    # path.unlink()
 
-        # Cleanup temporary build file
-        if temp_fmp4.exists():
-            temp_fmp4.unlink()
+            # Close stdin so FFmpeg knows the stream is over and can write the final MP4 index
+            process.stdin.close()
 
-        if success:
-            remove_folder(str(self.chunk_path))
-        else:
-            print("FFmpeg remuxing failed. Check structural integrity of chunks.")
+            # Wait for FFmpeg to finish up and catch any structural logs
+            _, stderr_data = process.communicate()
+
+            if process.returncode == 0:
+                print("Successfully remuxed VOD!")
+                remove_folder(str(self.chunk_path))
+            else:
+                print(f"FFmpeg error (Exit Code {process.returncode}):")
+                print(stderr_data.decode('utf-8', errors='ignore'))
+
+        except Exception as e:
+            print(f"An error occurred while piping to FFmpeg: {e}")
 
     def get_fragment_time_delta(self):
         return timedelta(seconds=10 * max(self.downloaded_fragments))
