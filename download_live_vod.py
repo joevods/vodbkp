@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import shutil
 import gzip
+from pprint import pprint
 
 from web_chat import backup_unknown_emotes, emotes_db_insert_new, process_chat_for_web
 
@@ -227,34 +228,81 @@ class LiveVodDownloader:
             frag_map[frag_val] = frag
         return frag_map
 
+    def get_fragments_map_new(self):
+        response = requests.get(self.m3u8_url)
+        if response.status_code != 200:
+            print(f'Failed to get m3u8 playlist {response.status_code=}')
+            return None
+
+        self.m3u8_content = response.text
+
+        # 1. Extract the initialization fragment name
+        init_match = re.search(r'#EXT-X-MAP:URI="([^"]+)"', self.m3u8_content)
+        self.init_filename = init_match.group(1) if init_match else "init-0.mp4"
+
+        # 2. Only match fragment lines that DO NOT start with '#'
+        fragments = re.findall(r'^([^#\s].*\.mp4)$', self.m3u8_content, re.MULTILINE)
+
+        frag_map = dict()
+        for frag in fragments:
+            match = re.match(r"^(\d+)(?:-(?:muted|unmuted))?\.mp4$", frag)
+            if not match:
+                continue  # Skip any unexpected strings safely
+
+            frag_val = int(match.group(1))
+            frag_map[frag_val] = frag
+        return frag_map
+
     def download_vod_fragments(self, frags_map):
+        # Ensure initialization fragment is downloaded first
+        init_file = self.chunk_path / 'init.mp4'
+        if not init_file.exists() and hasattr(self, 'init_filename'):
+            init_url = f'{self.base_url}/{self.init_filename}'
+            try:
+                r = requests.get(init_url, timeout=15)
+                if r.status_code == 200:
+                    init_file.write_bytes(r.content)
+            except Exception as e:
+                print(f"Failed to download initialization fragment: {e}")
+
         with tqdm(frags_map.items(), leave=None) as pbar:
             for num, name in pbar:
                 fragment_timestamp = timedelta(seconds=10 * num)
-                chunk_file = self.chunk_path / f'{num}.ts'
-                temp_chunk = self.chunk_path / 'tmp_chunk.ts'
+                chunk_file = self.chunk_path / f'{num}.mp4'
+
                 if not chunk_file.exists():
                     chunk_url = f'{self.base_url}/{name}'
-                    for _ in range(3):
-                        success = run_ffmpeg('-y', '-loglevel', 'panic', '-i', chunk_url, '-c', 'copy', temp_chunk)
-                        if success: break
+                    for _ in range(3):  # 3 retry attempts
+                        try:
+                            r = requests.get(chunk_url, timeout=15)
+                            if r.status_code == 200:
+                                chunk_file.write_bytes(r.content)
+                                break
+                        except requests.RequestException:
+                            time.sleep(1)
                     else:
                         raise RuntimeError(f'Could not download {name}')
-                    temp_chunk.rename(chunk_file)
 
                     pbar.set_description(f'{name} downloaded! ({fragment_timestamp})')
                 else:
-                    pass
                     pbar.set_description(f'{name} exists! ({fragment_timestamp})')
 
                 self.downloaded_fragments.add(num)
 
     def vod_has_ended(self):
-        parts_time = re.findall(r'#EXTINF:(.*),', self.m3u8_content)
-        seconds = float(parts_time[-1])
-        if seconds < 10.0:
+        # 1. The Standard HLS Way: Check for the explicit closure tag
+        if '#EXT-X-ENDLIST' in self.m3u8_content:
+            print("Detected #EXT-X-ENDLIST. Stream finished cleanly.")
             return True
-        return time_from(self.last_frag_update) > self.UPDATE_LIST_TIME
+
+        # 2. Fallback: If the API says the stream ended, but the CDN cache is lagging,
+        # your main loop will naturally keep polling this m3u8_content.
+        # If no new fragments appear after X minutes, assume it's dead/abandoned.
+        if time_from(self.last_frag_update) > self.UPDATE_LIST_TIME:
+            print(f"Stream timeout: No new fragments received for {self.UPDATE_LIST_TIME // 60} minutes.")
+            return True
+
+        return False
 
     def check_consecutive_fragments(self):
         sorted_fragments = sorted(self.downloaded_fragments)
@@ -267,22 +315,40 @@ class LiveVodDownloader:
                 raise RuntimeError(f"Warning: Gap detected between {sorted_fragments[i]} and {sorted_fragments[i + 1]}")
 
     def consolidate_vod_fragments(self):
-        # create the final video and delete temp files
-        frag_list_file = self.work_path / 'fragments.txt'
-        output_file = self.work_path / f'{self.vod.id}.mp4'
-
-        # check that all downloaded chunks have no gaps
+        # Check that all downloaded chunks have no gaps
         self.check_consecutive_fragments()
 
-        with frag_list_file.open('w') as f:
-            for e in tqdm(sorted(self.downloaded_fragments), leave=None):
-                path = Path('../', 'chunks', f'{self.vod.id}', f'{e}.ts')
-                f.write(f'file {path}\n')
+        self.work_path.mkdir(parents=True, exist_ok=True)
+        temp_fmp4 = self.work_path / f'{self.vod.id}_temp.mp4'
+        output_file = self.work_path / f'{self.vod.id}.mp4'
+        init_file = self.chunk_path / 'init.mp4'
 
-        run_ffmpeg('-y', '-f', 'concat', '-safe', '0', '-i', frag_list_file, '-c', 'copy', output_file, timeout=None, capture_output=False)
-        frag_list_file.unlink()
+        print("Merging fMP4 fragments via binary concatenation...")
+        with open(temp_fmp4, 'wb') as outfile:
+            # 1. Write initialization metadata layout first
+            if init_file.exists():
+                with open(init_file, 'rb') as infile:
+                    outfile.write(infile.read())
 
-        remove_folder(str(self.chunk_path))
+            # 2. Sequentially append video segments
+            for e in tqdm(sorted(self.downloaded_fragments), leave=None, desc="Merging"):
+                path = self.chunk_path / f'{e}.mp4'
+                if path.exists():
+                    with open(path, 'rb') as infile:
+                        outfile.write(infile.read())
+
+        print("Remuxing to standard streamable MP4 using FFmpeg...")
+        # A single FFmpeg pass structures the layout for general media player compatibility
+        success = run_ffmpeg('-y', '-i', temp_fmp4, '-c', 'copy', output_file, timeout=None, capture_output=False)
+
+        # Cleanup temporary build file
+        if temp_fmp4.exists():
+            temp_fmp4.unlink()
+
+        if success:
+            remove_folder(str(self.chunk_path))
+        else:
+            print("FFmpeg remuxing failed. Check structural integrity of chunks.")
 
     def get_fragment_time_delta(self):
         return timedelta(seconds=10 * max(self.downloaded_fragments))
@@ -298,7 +364,8 @@ class LiveVodDownloader:
             pbar.set_description('Checking update')
             self.loop_time = time.time()
             # download latest fragments
-            fragments_map = self.get_fragments_map()
+            # fragments_map = self.get_fragments_map()
+            fragments_map = self.get_fragments_map_new()
             if fragments_map is None:
                 continue
 
