@@ -322,12 +322,10 @@ class LiveVodDownloader:
         output_file = self.work_path / f'{self.vod.id}.mp4'
         init_file = self.chunk_path / 'init.mp4'
 
-        # Tell FFmpeg to read from standard input (pipe:0)
         command = ['ffmpeg', '-y', '-i', 'pipe:0', '-c', 'copy', str(output_file)]
 
         print("Streaming fragments directly to FFmpeg...")
         try:
-            # Start FFmpeg process with stdin enabled
             process = subprocess.Popen(
                 command,
                 stdin=subprocess.PIPE,
@@ -335,25 +333,19 @@ class LiveVodDownloader:
                 stderr=subprocess.PIPE
             )
 
-            # 1. Feed the mandatory initialization header first
+            # 1. Feed the initialization header first
             if init_file.exists():
                 process.stdin.write(init_file.read_bytes())
+                # init_file.unlink()
 
-            # 2. Feed each sequential video chunk
+            # 2. Feed each sequential video chunk and delete it immediately
             for e in tqdm(sorted(self.downloaded_fragments), leave=None, desc="Piping to FFmpeg"):
                 path = self.chunk_path / f'{e}.mp4'
                 if path.exists():
                     process.stdin.write(path.read_bytes())
+                    # path.unlink()  # Deletes chunk immediately after feeding
 
-                    # --- PRO-TIP FOR 1X DISK SPACE ---
-                    # If you want to be extremely aggressive with storage,
-                    # uncomment the next line to delete the chunk right after feeding it to FFmpeg!
-                    # path.unlink()
-
-            # Close stdin so FFmpeg knows the stream is over and can write the final MP4 index
-            process.stdin.close()
-
-            # Wait for FFmpeg to finish up and catch any structural logs
+            # 3. communicate() automatically flushes stdin, closes stdin, and waits for FFmpeg
             _, stderr_data = process.communicate()
 
             if process.returncode == 0:
