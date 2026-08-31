@@ -887,7 +887,7 @@ data = [
     {
         'title': 'Kingdom Come: Deliverance II',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg',
-        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, ],
+        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, 2857025602],
     },
     {
         'title': 'JADSEYA 2025 Award Nominees',
@@ -1036,7 +1036,7 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1158850/header.jpg',
         'vod_ids': [
             2787715566, 2792572212, 2793369063, 2794155999, 2794942624, 2798078333, 2798892227, 2799678517, 2800472499, 2802836032,
-            2803555813, 2804336554
+            2803555813, 2804336554, 2850607012, 2851541449
         ],
     },
     {
@@ -1052,12 +1052,47 @@ data = [
     {
         'title': 'The Forgotten City',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/874260/header.jpg',
-        'vod_ids': [2801282448, ],
+        'vod_ids': [2801282448, 2823094194, 2828765699],
     },
     {
         'title': 'Road to Empress 2',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/4148240/header.jpg',
         'vod_ids': [2801428760, ],
+    },
+    {
+        'title': 'WUCHANG: Fallen Feathers',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2277560/header.jpg',
+        'vod_ids': [2819877947, 2820729075, 2821443154, 2822247476, 2823920028, 2824694897],
+    },
+    {
+        'title': '007 First Light',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3768760/header.jpg',
+        'vod_ids': [2825457736, 2826284468, 2827922707, 2831187528],
+    },
+    {
+        'title': 'Palworld',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1623730/header.jpg',
+        'vod_ids': [2832009325, 2832860087, 2849763263, 2854766614],
+    },
+    {
+        'title': 'STRANGER OF PARADISE FINAL FANTASY ORIGIN',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1358700/header.jpg',
+        'vod_ids': [2833647496, 2834528661, 2837955572, 2838892273, 2839770467],
+    },
+    {
+        'title': 'Dispatch',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/2592160/header.jpg',
+        'vod_ids': [2845166166, 2846065577],
+    },
+    {
+        'title': 'Mega Man X',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/743890/header.jpg',
+        'vod_ids': [2855461717],
+    },
+    {
+        'title': 'Gamescom 2026',
+        'img_link': 'img/Special Events.jpg',
+        'vod_ids': [2856127441],
     },
     # {
     #     'title': '',
