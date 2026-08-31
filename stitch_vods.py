@@ -91,6 +91,11 @@ def concat_chats(vod_ids):
         json.dump(precessed_chat, f, separators=(',', ':'))
     print(f'salvato in {web_chat_path}')
 
+    # rename new chat and save original
+    orig_chat = Path(BASE_CHAT_PATH / vod_ids[0] / 'chat_web.json')
+    orig_chat.rename(Path(BASE_CHAT_PATH / vod_ids[0] / 'chat_web.json.orig'))
+    web_chat_path.rename(Path(BASE_CHAT_PATH / vod_ids[0] / 'chat_web.json'))
+
 
 def test_chat(vod_id):
     chat_path = BASE_CHAT_PATH / vod_id / "chat.json.gz"
@@ -107,6 +112,7 @@ def test_chat(vod_id):
     print(f'  {creat1} {offset1}')
     print(f'  {creat2} {offset2}')
 
+    return
     for msg in chat:
         # pprint(msg)
         text = ''.join(m['text'] for m in msg['message']['fragments'])
@@ -125,17 +131,18 @@ def get_video_duration(video_path):
     return float(result.stdout.strip())
 
 def main():
-    vod_ids = [
-        '2422978386',
-        '2422982263',
-        '2423019679',
-    ]
+    # vod_ids = ['2718006157', '2718315067']
+    # vod_ids = ['2726382353', '2726402549']
+    # vod_ids = ['2756971421', '2757069510']
+    # vod_ids = ['2764826135', '2764995004']
+    # vod_ids = ['2768141628', '2768218916']
+    vod_ids = ['2784584052', '2784586502']
 
     output_basename = f"stitched_{'_'.join(vod_ids)}"
     video_output = BASE_VIDEO_PATH / f"{output_basename}.mp4"
     chat_output = Path(f"{output_basename}_chat.json.gz")
 
-    # concat_videos(vod_ids, video_output)
+    concat_videos(vod_ids, video_output)
     concat_chats(vod_ids)
     # test_chat(vod_ids[0])
     # test_chat(vod_ids[1])
