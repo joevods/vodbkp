@@ -1,6 +1,7 @@
 
+import datetime
 import json
-
+import re
 
 data = [
     {
@@ -887,7 +888,10 @@ data = [
     {
         'title': 'Kingdom Come: Deliverance II',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg',
-        'vod_ids': [2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, 2857025602],
+        'vod_ids': [
+            2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, 2857025602, 2862520155, 2863421186, 2864260026, 2869667087,
+            2870482420, 2871399512,
+        ],
     },
     {
         'title': 'JADSEYA 2025 Award Nominees',
@@ -1094,6 +1098,16 @@ data = [
         'img_link': 'img/Special Events.jpg',
         'vod_ids': [2856127441],
     },
+    {
+        'title': 'Final Fantasy 7',
+        'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3837340/header.jpg',
+        'vod_ids': [2861940846, 2868908710],
+    },
+    {
+        'title': 'Remember 11: The Age of Infinity',
+        'img_link': 'https://cdn2.steamgriddb.com/grid/af088863b1c304e2fc2f4b5be619b57d.png',
+        'vod_ids': [2863599826, 2869835673, ],
+    },
     # {
     #     'title': '',
     #     'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps//header.jpg',
@@ -1105,15 +1119,14 @@ data = [
 '''
 data = data[::-1]
 
-import re
-import datetime
-
 for game in data:
-    vids = list()
+    vids = []
     for vid in game['vod_ids']:
         match vid:
             case (vid, timestamp):
                 m = re.match(r'(\d+)h(\d+)m(\d+)s', timestamp)
+                if m is None:
+                    raise RuntimeError(f'Invalid timestamp: {timestamp}')
                 time_parts = tuple(int(g) for g in m.groups())
                 t = datetime.timedelta(hours=time_parts[0], minutes=time_parts[1], seconds=time_parts[2]).seconds
                 vids.append({'type':'local', 'id': str(vid), 't': t})

@@ -1,0 +1,12 @@
+[project]
+name = "live-vod-download"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "ipython>=9.17.1",
+    "python-dateutil>=2.9.0.post0",
+    "requests>=2.34.2",
+    "tqdm>=4.70.1",
+    "twitch-python>=0.0.20",
+    "yt-dlp>=2026.8.19",
+]

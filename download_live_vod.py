@@ -460,6 +460,7 @@ def main():
         if (m := re.match(r'https://www\.twitch\.tv/videos/(\d+)', sys.argv[1])):
             vodid = int(m.group(1))
             vod = HELIX.video(vodid)
+            print(vod)
             lvd = LiveVodDownloader(vod)
             lvd.download_live_vod()
 
