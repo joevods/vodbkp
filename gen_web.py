@@ -890,7 +890,7 @@ data = [
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/1771300/header.jpg',
         'vod_ids': [
             2634416333, 2636097466, 2639832490, 2639832491, 2639832492, 2642090436, 2646013902, 2857025602, 2862520155, 2863421186, 2864260026, 2869667087,
-            2870482420, 2871399512,
+            2870482420, 2871399512, 2879479869, 2880270683, 2881150516
         ],
     },
     {
@@ -1061,7 +1061,7 @@ data = [
     {
         'title': 'Road to Empress 2',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/4148240/header.jpg',
-        'vod_ids': [2801428760, ],
+        'vod_ids': [2801428760, 2878678411],
     },
     {
         'title': 'WUCHANG: Fallen Feathers',
@@ -1101,12 +1101,12 @@ data = [
     {
         'title': 'Final Fantasy 7',
         'img_link': 'https://cdn.cloudflare.steamstatic.com/steam/apps/3837340/header.jpg',
-        'vod_ids': [2861940846, 2868908710],
+        'vod_ids': [2861940846, 2868908710, 2878521970],
     },
     {
         'title': 'Remember 11: The Age of Infinity',
         'img_link': 'https://cdn2.steamgriddb.com/grid/af088863b1c304e2fc2f4b5be619b57d.png',
-        'vod_ids': [2863599826, 2869835673, ],
+        'vod_ids': [2863599826, 2869835673, 2879655059],
     },
     # {
     #     'title': '',
